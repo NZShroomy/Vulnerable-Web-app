@@ -1,0 +1,84 @@
+/* attackbutton.css - extracted FAB / attack button styles from Login.css */
+
+.fab {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    /* main button sits at right, menu expands left */
+    flex-direction: row;
+}
+
+.fab-menu {
+    list-style: none;
+    margin: 0 10px 0 0; /* gap between menu and main button */
+    padding: 0;
+    display: flex;
+    flex-direction: row; /* items laid out horizontally to the left */
+    gap: 10px;
+    transform-origin: center right;
+    transition: transform .18s ease, opacity .18s ease;
+    opacity: 0;
+    transform: translateX(8px) scale(.98);
+    pointer-events: none;
+}
+
+.fab.expanded .fab-menu {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+    pointer-events: auto;
+}
+
+.fab-main {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: #e74c3c;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.18);
+}
+
+.fab-item {
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.98);
+    border: 1px solid rgba(15,23,42,0.06);
+    color: #111827;
+    cursor: pointer;
+    box-shadow: 0 6px 12px rgba(15,23,42,0.08);
+    font-weight: 700;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+    transform: translateX(6px);
+    opacity: 0;
+    transition: transform .18s ease, opacity .18s ease;
+}
+
+.fab.expanded .fab-item { transform: translateX(0); opacity: 1; }
+
+/* staggered reveal delays */
+.fab-menu li:nth-child(1) .fab-item { transition-delay: 0s; }
+.fab-menu li:nth-child(2) .fab-item { transition-delay: 0.03s; }
+.fab-menu li:nth-child(3) .fab-item { transition-delay: 0.06s; }
+.fab-menu li:nth-child(4) .fab-item { transition-delay: 0.09s; }
+.fab-menu li:nth-child(5) .fab-item { transition-delay: 0.12s; }
+
+.fab-item:hover { background: #f3f4f6; }
+
+@media (max-width:420px){
+    .fab { right: 12px; bottom: 12px; }
+    .fab-main { width: 48px; height: 48px; }
+    .fab-item { width: 40px; height: 40px; font-size: 0.7rem; }
+}
