@@ -31,7 +31,7 @@ html,body{
 
 .login-card{
     width:100%;
-    max-width:420px;               
+    max-width:450px;               
     background:var(--card-bg);
     border-radius:var(--radius);
     box-shadow:var(--shadow);
@@ -101,11 +101,25 @@ html,body{
 .login-form button[type="submit"]:active{ transform: translateY(0); }
 
 
-.login-card .help{
-    font-size:0.875rem;
-    color:var(--muted);
-    margin-top:6px;
+.form-links {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    font-size: 0.875rem;
+    color: var(--muted);
+    
 }
+
+.form-links a {
+    color: var(--accent);
+    text-decoration: none;
+}
+
+.form-links a:hover {
+    text-decoration: underline;
+}
+
 
 
 @media (max-width:420px){
