@@ -1,0 +1,108 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: url("images/FutureBankGreen.png");
+    background-size: cover;
+    color: white;
+}
+
+/* HEADER BAR */
+header {
+    width: 100%;
+    height: 70px;
+    background: linear-gradient(135deg, #003d29, #0a5c40); /* deep pounamu tones */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 25px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    border-bottom: 0;
+    color: white;
+    box-sizing: border-box;
+
+    /* soft glow effect like polished stone */
+    box-shadow: 0 2px 12px rgba(0, 100, 60, 0.6);
+}
+
+/* Koru-inspired curved shape on bottom edge of header */
+header::after {
+    content: "";
+    position: absolute;
+    bottom: -12px;
+    left: 0;
+    width: 100%;
+    height: 12px;
+
+    /* gentle wave inspired by koru unfurl */
+    background: radial-gradient(circle at left, #0a5c40, transparent);
+}
+
+/* ===== Right-side greeting link ===== */
+.header-account-link {
+    margin-left: auto;   /* pushes it to the right but keeps inside header */
+    white-space: nowrap;  /* prevents wrapping */
+    color: #94f5c7;    /* jade-like highlight */
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-size: 1.15rem;
+}
+
+/* Subtle koru glow on hover */
+.header-account-link:hover {
+    color: white;
+    text-shadow: 0 0 10px #94f5c7;
+}
+
+/* LEFT SIDEBAR NAVIGATION */
+.sidebar {
+    position: fixed; /* stays on the left */
+    top: 60px;       /* sits below header */
+    left: 0;
+    width: 200px;
+    height: calc(100vh - 60px); /* fill space below header */
+    background: #222;
+    padding-top: 20px;
+    border-right: 2px solid #333;
+    
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar a {
+    display: block;
+    padding: 12px 20px;
+    color: white;
+    text-decoration: none;
+    margin-bottom: 20px;
+}
+
+.sidebar a:hover {
+    background: #444;
+}
+
+/* MAIN CONTENT AREA */
+main {
+    margin-top: 60px;    /* leave space for header */
+    text-align: center
+    ;
+    padding: 20px;
+    height: calc(100vh - 60px);
+    overflow-y: auto;    /* enable scrolling only in content */
+    
+}
+.VAULTHOME {
+    width: auto;          /* adjust width */
+    height: auto;        /* or set a fixed height */
+    margin: 0 auto;      /* centers horizontally */
+    margin-top: 40px;    /* adjust vertical spacing */
+    padding: 20px;
+    
+}
