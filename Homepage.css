@@ -85,7 +85,7 @@ header::after {
 }
 
 .sidebar a:hover {
-    background: #444;
+    background: #003d29;
 }
 
 /* MAIN CONTENT AREA */
@@ -99,10 +99,11 @@ main {
     
 }
 .VAULTHOME {
-    width: auto;          /* adjust width */
-    height: auto;        /* or set a fixed height */
+    width: 1080px;          /* adjust width */
+    height: 600px;        /* or set a fixed height */
     margin: 0 auto;      /* centers horizontally */
     margin-top: 40px;    /* adjust vertical spacing */
-    padding: 20px;
+    border-style: solid;
+    border-color: #003d29;
     
 }
