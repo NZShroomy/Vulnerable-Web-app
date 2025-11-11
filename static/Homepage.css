@@ -1,23 +1,22 @@
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background: url("images/FutureBankGreen.png");
+    background: url("/static/images/FutureBankGreen.png");
     background-size: cover;
     color: white;
 }
 
+
+
 /* HEADER BAR */
 header {
-    width: 100%;
+    grid-area: header;
     height: 70px;
     background: linear-gradient(135deg, #003d29, #0a5c40); /* deep pounamu tones */
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 0 25px;
-    position: fixed;
-    top: 0;
-    left: 0;
     z-index: 1000;
     border-bottom: 0;
     color: white;
@@ -58,17 +57,14 @@ header::after {
     text-shadow: 0 0 10px #94f5c7;
 }
 
-/* LEFT SIDEBAR NAVIGATION */
 .sidebar {
-    position: fixed; /* stays on the left */
-    top: 60px;       /* sits below header */
-    left: 0;
+    grid-area: sidebar;
     width: 200px;
-    height: calc(100vh - 60px); /* fill space below header */
     background: #222;
     padding-top: 20px;
     border-right: 2px solid #333;
-    
+    height: calc(100vh - 70px);
+    overflow: auto;
 }
 
 .sidebar ul {
@@ -89,14 +85,13 @@ header::after {
 }
 
 /* MAIN CONTENT AREA */
+/* MAIN CONTENT AREA */
 main {
-    margin-top: 60px;    /* leave space for header */
-    text-align: center
-    ;
+    grid-area: main;
+    text-align: center;
     padding: 20px;
-    height: calc(100vh - 60px);
+    height: calc(100vh - 70px);
     overflow-y: auto;    /* enable scrolling only in content */
-    
 }
 .VAULTHOME {
     width: 1080px;          /* adjust width */
