@@ -1,4 +1,4 @@
-// components/attack-fab.js
+// static/attackbutton.js
 
 class AttackFab extends HTMLElement {
   constructor() {
@@ -44,7 +44,7 @@ class AttackFab extends HTMLElement {
 
     // Default path: 'attackbutton.css' alongside your pages. Adjust if you keep the CSS in Components/.
     // The href is resolved relative to the page URL, not this JS file.
-    loadAndInjectCSS('/components/attackbutton.css');
+    loadAndInjectCSS('/static/attackbutton.css');
 
     const fab = shadow.getElementById('vulnFab');
     const toggle = shadow.getElementById('fabToggle');

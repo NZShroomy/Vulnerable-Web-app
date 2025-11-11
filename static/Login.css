@@ -135,7 +135,7 @@ html,body{
 }
 
 body {
-  background: url("Images/techy.jpg");
+  background: url("/static/Images/techy.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
