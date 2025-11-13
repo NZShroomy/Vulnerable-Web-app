@@ -1,16 +1,23 @@
-/* Page grid layout: header, sidebar, main */
-
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: url("/static/images/FutureBankGreen.png");
+    background-size: cover;
+    color: white;
+}
 
 .layout-grid {
     display: grid;
-    grid-template-rows: 70px 1fr;
-    grid-template-columns: 200px 1fr;
     grid-template-areas:
         "header header"
         "sidebar main";
+    grid-template-columns: 200px 1fr;
+    grid-template-rows: 70px 1fr;
     height: 100vh;
 }
 
+
+/* HEADER BAR */
 header {
     grid-area: header;
     height: 70px;
@@ -28,6 +35,7 @@ header {
     box-shadow: 0 2px 12px rgba(0, 100, 60, 0.6);
 }
 
+/* Koru-inspired curved shape on bottom edge of header */
 header::after {
     content: "";
     position: absolute;
@@ -40,6 +48,7 @@ header::after {
     background: radial-gradient(circle at left, #0a5c40, transparent);
 }
 
+/* ===== Right-side greeting link ===== */
 .header-account-link {
     margin-left: auto;   /* pushes it to the right but keeps inside header */
     white-space: nowrap;  /* prevents wrapping */
@@ -51,17 +60,12 @@ header::after {
     font-size: 1.15rem;
 }
 
+/* Subtle koru glow on hover */
 .header-account-link:hover {
     color: white;
     text-shadow: 0 0 10px #94f5c7;
 }
 
-.sidebar {
-  grid-area: sidebar;
-  background-color: #333;
-  color: white;
-  padding: 20px;
-}
 .sidebar {
     grid-area: sidebar;
     width: 200px;
@@ -89,8 +93,15 @@ header::after {
     background: #003d29;
 }
 
+
+/* MAIN CONTENT AREA */
 main {
-  grid-area: main;
-  padding: 20px;
-  
+    grid-area: main;
+    grid-template-columns: 1fr 1fr;
+    display: grid;
+    text-align: center;
+    padding: 20px;
+    height: calc(100vh - 70px);
+    overflow-y: auto;    /* enable scrolling only in content */
 }
+

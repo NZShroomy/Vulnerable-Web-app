@@ -6,10 +6,6 @@ app = Flask(__name__)
 def home():
     return render_template('Homepage.html') #change to splash  when finished
 
-@app.route('/accounts')
-def accounts():
-    return render_template('accounts.html')
-
 @app.route('/login')
 def login():
     return render_template('Login.html')
@@ -17,6 +13,16 @@ def login():
 @app.route('/signup')
 def signup():
     return render_template('Signup.html')
+
+@app.route('/about')
+def about():
+    return render_template('AboutUs.html')
+
+@app.route('/my_accounts')
+def my_accounts():
+    return render_template('My_Accounts.html')
+
+
 
 if __name__ == '__main__':
     app.run(debug=True)
