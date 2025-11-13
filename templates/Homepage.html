@@ -1,52 +1,25 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Homepage</title>
-    <link rel="stylesheet" href="/static/Homepage.css" />
-</head>
-<body>
+<!-- Jinja2 for resusability-->
+{% extends "Base.html" %}
+{% block title %}Homepage{% endblock %}
+<!-- main content change this per page-->
+{% block content %}
+  <div class="dashboard-grid">
+  <section class="card account-summary">
+    <h2>Account Summary</h2>
+    <p>Balance: $2,345.00</p>
+  </section>
 
-    <!-- HEADER -->
-    <header>
-        <h1>Critical Job BANK</h1>
-        <a href="account.html" class="header-account-link">
-        Kia Ora Mr. Person
-    </a>
-    </header>
+  <section class="card recent-transactions">
+    <h2>Recent Transactions</h2>
+    <ul>
+      <li>Payment to Grocery Mart - $54.20</li>
+      <li>Deposit - $500.00</li>
+    </ul>
+  </section>
 
-    <!-- LEFT NAVIGATION -->
-    <nav class="sidebar">
-        <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">My Accounts</a></li>
-            <li><a href="#">My Cards</a></li>
-            <li><a href="#">Transfer Funds</a></li> 
-            <li><a href="#">Create Account</a></li>
-            <li><a href="#">My Insurance</a></li>
-            <li><a href="#">Attacks</a></li>
-            <li><a href="#">Tutorials</a></li>
-            <li><a href="#">About Us</a></li>
-            <li><a href="#">Help</a></li>
-        </ul>
-    </nav>
-
-    <!-- MAIN CONTENT AREA -->
-    <main>
-        <h1>Kia Ora! Welcome to Critical Bank!</h1>
-        <div class="VAULTHOME">
-            <img src="Images/VaultGreenNarrow.png">
-        </div>
-        <p>This is you're <em>ULTRA SECURE</em> banking application. Click here to learn more!</p>
-        <a href="splash.html"> Click Here</a>
-        <p>Scroll me — the header + sidebar stay fixed.</p>
-
-        <!-- Dummy content to show scrolling -->
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda dolorem impedit in quaerat ab tempora unde eligendi, incidunt praesentium possimus, voluptates dolores quod repudiandae, at eum! Perferendis nostrum, illum autem aliquid ea nisi sequi nihil officiis accusamus voluptate iste assumenda rerum iure ex velit quos vitae sit ducimus dolorum similique recusandae. Neque, quod voluptate commodi provident fuga placeat odit molestiae, earum officia mollitia voluptatem veritatis dolor nobis quam voluptates architecto nisi iure dignissimos consequatur id labore optio. Sit mollitia eveniet, sunt similique blanditiis maxime deleniti id, architecto, consequuntur nulla quam facere quibusdam sapiente? Possimus consectetur rerum et praesentium ad minima atque repellat alias eos ea neque natus nesciunt sed rem ipsum vero quam hic facere laborum, eum, quibusdam recusandae aut! Nostrum, molestiae nemo minus animi quidem rerum aperiam expedita impedit placeat cupiditate optio eos dolorum porro? Corporis ex, similique explicabo, quibusdam, aperiam eveniet illum voluptatem odit nemo modi repellat ipsa cum. Aperiam impedit fuga rerum id dolore cum eos tempora ratione atque sint aut necessitatibus repudiandae molestias porro ducimus obcaecati dolorem dolores sapiente, ullam tempore minus deleniti? Similique sunt possimus recusandae saepe, culpa, laboriosam ipsa dignissimos earum sed corrupti totam consequuntur magni consectetur, ullam aspernatur harum et dolorem blanditiis quasi.</p>
-        
-    </main>
-
-    <script src="Homepage.js"></script>
-</body>
-</html>
+  <section class="card news">
+    <h2>Bank News</h2>
+    <p>We’ve upgraded our security systems.</p>
+  </section>
+</div>
+{% endblock %}

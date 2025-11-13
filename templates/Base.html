@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>{% block title %}{% endblock %}</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='global.css') }}">
+</head>
+<body>
+  <div class="layout-grid">
+    <header>
+      <h1>Critical Job BANK</h1>
+      <a href="account.html" class="header-account-link">Kia Ora Mr. Person</a>
+    </header>
+
+    <nav class="sidebar">
+      <ul>
+        <li><a href="{{ url_for('my_accounts') }}">My Accounts</a></li>
+        <li><a href="#">My Cards</a></li>
+        <li><a href="#">Transfer Funds</a></li>
+        <li><a href="#">My Insurance</a></li>
+        <li><a href="#">Attacks</a></li>
+        <li><a href="#">Tutorials</a></li>
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Help</a></li>
+      </ul>
+    </nav>
+
+    <main>
+      {% block content %}{% endblock %}
+    </main>
+  </div>
+</body>
