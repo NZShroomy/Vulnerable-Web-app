@@ -22,7 +22,33 @@ def about():
 def my_accounts():
     return render_template('My_Accounts.html')
 
+@app.route('/aboutus')
+def aboutus():
+    return render_template('Aboutus.html')
 
+@app.route('/my_cards')
+def my_cards():
+    return render_template('Mycards.html')
+
+@app.route('/transfer_funds')
+def transfer_funds():
+    return render_template('TransferFunds.html')
+
+@app.route('/my_insurance')
+def my_insurance():
+    return render_template('MyInsurance.html')
+
+@app.route('/attacks')
+def attacks():
+    return render_template('Attacks.html')
+
+@app.route('/tutorials')
+def tutorials():
+    return render_template('Tutorials.html')
+
+@app.route('/help')
+def help():
+    return render_template('Help.html')
 
 if __name__ == '__main__':
     app.run(debug=True)

@@ -8,20 +8,21 @@
 <body>
   <div class="layout-grid">
     <header>
-      <h1>Critical Job BANK</h1>
+      <div class ="header-title">
+      <h1><a href="{{ url_for('home') }}">Critical Job Bank </a> </h1>
+      </div>
       <a href="account.html" class="header-account-link">Kia Ora Mr. Person</a>
     </header>
-
     <nav class="sidebar">
       <ul>
         <li><a href="{{ url_for('my_accounts') }}">My Accounts</a></li>
-        <li><a href="#">My Cards</a></li>
-        <li><a href="#">Transfer Funds</a></li>
-        <li><a href="#">My Insurance</a></li>
-        <li><a href="#">Attacks</a></li>
-        <li><a href="#">Tutorials</a></li>
-        <li><a href="#">About Us</a></li>
-        <li><a href="#">Help</a></li>
+        <li><a href="{{ url_for('my_cards') }}">My Cards</a></li>
+        <li><a href="{{ url_for('transfer_funds') }}">Transfer Funds</a></li>
+        <li><a href="{{ url_for('my_insurance') }}">My Insurance</a></li>
+        <li><a href="{{ url_for('attacks') }}">Attacks</a></li>
+        <li><a href="{{ url_for('tutorials') }}">Tutorials</a></li>
+        <li><a href="{{ url_for('aboutus') }}">About Us</a></li>
+        <li><a href="{{ url_for('help') }}">Help</a></li>
       </ul>
     </nav>
 

@@ -1,19 +1,24 @@
 
 <!-- Jinja2 for resusability-->
 {% extends "Base.html" %}
-{% block title %}Homepage{% endblock %}
+{% block title %}My Accounts{% endblock %}
 <!-- main content change this per page-->
 {% block content %}
-  <h1>Kia Ora! Welcome to Critical Bank!</h1>
-        <div class="VAULTHOME">
-            <img src="/static/Images/VaultGreenNarrow.png">
-        </div>
-        <p>This is you're <em>ULTRA SECURE</em> banking application. Click here to learn more!</p>
-        <p>Scroll me — the header + sidebar stay fixed.</p>
+<section class = accounts-container><h1 class="acc-title">My Accounts </h1>
+    
 
-        <!-- Dummy content to show scrolling -->
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda dolorem impedit in quaerat ab tempora unde eligendi, incidunt praesentium possimus, voluptates dolores quod repudiandae, at eum! Perferendis nostrum, illum autem aliquid ea nisi sequi nihil officiis accusamus voluptate iste assumenda rerum iure ex velit quos vitae sit ducimus dolorum similique recusandae. Neque, quod voluptate commodi provident fuga placeat odit molestiae, earum officia mollitia voluptatem veritatis dolor nobis quam voluptates architecto nisi iure dignissimos consequatur id labore optio. Sit mollitia eveniet, sunt similique blanditiis maxime deleniti id, architecto, consequuntur nulla quam facere quibusdam sapiente? Possimus consectetur rerum et praesentium ad minima atque repellat alias eos ea neque natus nesciunt sed rem ipsum vero quam hic facere laborum, eum, quibusdam recusandae aut! Nostrum, molestiae nemo minus animi quidem rerum aperiam expedita impedit placeat cupiditate optio eos dolorum porro? Corporis ex, similique explicabo, quibusdam, aperiam eveniet illum voluptatem odit nemo modi repellat ipsa cum. Aperiam impedit fuga rerum id dolore cum eos tempora ratione atque sint aut necessitatibus repudiandae molestias porro ducimus obcaecati dolorem dolores sapiente, ullam tempore minus deleniti? Similique sunt possimus recusandae saepe, culpa, laboriosam ipsa dignissimos earum sed corrupti totam consequuntur magni consectetur, ullam aspernatur harum et dolorem blanditiis quasi.</p>
-        
-    </main>
-</div>
+    {% set placeholder = url_for('static', filename='images/pantera.jpg') %}
+
+  
+    
+    <div class="accounts-grid">
+           <!-- placeholder image for accounts -->
+            {% for i in range(5) %}
+                <div class="account-card">
+                    <div class="account-image" style="background-image: url('{{ placeholder }}')" aria-hidden="true"></div>
+                    <div class="account-name">Account {{ i + 1 }}</div>
+                </div>
+            {% endfor %}
+    </div>
+</section>
 {% endblock %}
