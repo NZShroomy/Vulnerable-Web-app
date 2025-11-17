@@ -36,9 +36,8 @@
                 </div>
         </div>
        
-        <!-- Floating Action Button -->
-       <attack-fab></attack-fab>
-  <script type="module" src="{{ url_for('/static', filename='attackbutton.js') }}"></script>
+       {% from "components/attack_fab.html" import attack_fab %}
+       {{ attack_fab() }}
 
 </body>
 </html>

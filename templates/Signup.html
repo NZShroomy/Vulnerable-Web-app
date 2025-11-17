@@ -30,9 +30,8 @@
                 </div>
         </div>
 
-        <!-- Floating Action Button -->
-       <script type="module" src="components/attackbutton.js"></script>
-        <attack-fab></attack-fab>
+        {% from "components/attack_fab.html" import attack_fab %}
+       {{ attack_fab() }}
 
 </body>
 </html>

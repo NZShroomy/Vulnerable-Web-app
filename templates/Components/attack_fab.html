@@ -1,0 +1,7 @@
+{% macro attack_fab() %}
+    <!-- Include the FAB button -->
+    <attack-fab></attack-fab>
+
+    <!-- Load the component JS once -->
+    <script src="{{ url_for('static', filename='attackbutton.js') }}"></script>
+{% endmacro %}

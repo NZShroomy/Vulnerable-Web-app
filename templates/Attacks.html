@@ -4,5 +4,6 @@
 {% block title %}Homepage{% endblock %}
 <!-- main content change this per page-->
 {% block content %}
-
+{% from "components/attack_fab.html" import attack_fab %}
+       {{ attack_fab() }}
 {% endblock %}
