@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <title>{% block title %}{% endblock %}</title>
   <link rel="stylesheet" href="{{ url_for('static', filename='global.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='attackbutton.css') }}">
 </head>
 <body>
   <div class="layout-grid">
@@ -28,9 +29,14 @@
 
     <main>
       {% block content %}
-      
 
       {% endblock %}
     </main>
   </div>
+
+   <!-- attack buttons -->
+  {% include "components/attack_buttons.html" %}
+  <script src="{{ url_for('static', filename='attackbutton.js') }}"></script>
+  <link rel="stylesheet" href="{{ url_for('static', filename='attackbutton.css') }}">
 </body>
+</html>
