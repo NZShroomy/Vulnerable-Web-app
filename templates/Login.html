@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,38 +8,43 @@
         <title>Login Page</title>
         <link rel="stylesheet" href="/static/global.css">
         <link rel="stylesheet" href="/static/Login.css">
+        <link rel="stylesheet" href="{{ url_for('static', filename='attackbutton.css') }}">
 </head>
+
 <body>
         <div class="login-container">
                 <div class="login-card">
                         <h2 class="title">Sign in</h2>
-                        
+
                         <form class="login-form" method="get" action="Homepage.html" name="login">
                                 <div class="form-group">
                                         <label for="username">Username</label>
-                                        <input type="text" id="username" name="username" required autocomplete="username">
+                                        <input type="text" id="username" name="username" required
+                                                autocomplete="username">
                                 </div>
                                 <div class="form-group">
                                         <label for="password">Password</label>
-                                        <input type="password" id="password" name="password" required autocomplete="current-password">
+                                        <input type="password" id="password" name="password" required
+                                                autocomplete="current-password">
                                 </div>
                                 <div class="form-group">
                                         <button type="submit">Login</button>
-                                         
+
                                 </div>
-                               <div class="form-links">
-                                <p class="help">Forgot your password? 
-                                        <a href="">Reset</a></p>
-                                <p class="signup">Don't have an account? 
-                                        <a href="/templates/Signup.html"> Sign up</a></p> <!-- "{{ url_for('signup') }}"  change for flaks when not using live server') }}" --->
+                                <div class="form-links">
+                                        <p class="help">Forgot your password?
+                                                <a href="">Reset</a>
+                                        </p>
+                                        <p class="signup">Don't have an account?
+                                                <a href="/templates/Signup.html"> Sign up</a>
+                                        </p>
+                                        <!-- "{{ url_for('signup') }}"  change for flaks when not using live server') }}" --->
                                 </div>
                         </form>
                 </div>
         </div>
-       
-        <!-- Floating Action Button -->
-       <attack-fab></attack-fab>
-  <script type="module" src="{{ url_for('/static', filename='attackbutton.js') }}"></script>
-
+        {% include 'components/attack_buttons.html' %}
+        <script src="{{ url_for('static', filename='attackbutton.js') }}"></script>
 </body>
+
 </html>

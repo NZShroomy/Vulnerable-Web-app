@@ -21,8 +21,9 @@
     transform-origin: center right;
     transition: transform .18s ease, opacity .18s ease;
     opacity: 0;
-    transform: translateX(8px) scale(.98);
     pointer-events: none;
+    transform: translateX(8px) scale(.98);
+    
 }
 
 .fab.expanded .fab-menu {

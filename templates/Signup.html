@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,7 +8,9 @@
         <title>Login Page</title>
         <link rel="stylesheet" href="/static/styles.css">
         <link rel="stylesheet" href="/static/Login.css">
+        <link rel="stylesheet" href="{{ url_for('static', filename='attackbutton.css') }}">
 </head>
+
 <body>
         <div class="login-container">
                 <div class="login-card">
@@ -16,23 +19,26 @@
                         <form class="login-form" action="signup.php" method="POST" name="signup">
                                 <div class="form-group">
                                         <label for="username">Username</label>
-                                        <input type="text" id="username" name="username" required autocomplete="username">
+                                        <input type="text" id="username" name="username" required
+                                                autocomplete="username">
                                 </div>
                                 <div class="form-group">
                                         <label for="password">Password</label>
-                                        <input type="password" id="password" name="password" required autocomplete="current-password">
+                                        <input type="password" id="password" name="password" required
+                                                autocomplete="current-password">
                                 </div>
                                 <div class="form-group">
                                         <button type="submit">Create Account</button>
                                 </div>
-                                <p class="help">Already have an account? <a href="/templates/Login.html">Login</a></p><!-- "{{ url_for('login') }}"  change for flaks when not using live server') }}" --->
+                                <p class="help">Already have an account? <a href="/templates/Login.html">Login</a></p>
+                                <!-- "{{ url_for('login') }}"  change for flaks when not using live server') }}" --->
                         </form>
                 </div>
         </div>
 
-        <!-- Floating Action Button -->
-       <script type="module" src="components/attackbutton.js"></script>
-        <attack-fab></attack-fab>
+        {% include 'components/attack_buttons.html' %}
+        <script src="{{ url_for('static', filename='attackbutton.js') }}"></script>
 
 </body>
+
 </html>
