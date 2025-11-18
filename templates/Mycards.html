@@ -1,9 +1,16 @@
 
 <!-- Jinja2 for resusability-->
 {% extends "Base.html" %}
-{% block title %}Homepage{% endblock %}
+{% block title %}My Cards{% endblock %}
 <!-- main content change this per page-->
 {% block content %}
+<section class = mycards-container><h1 class="mycards-title">My Cards </h1>
+   
+    <div class="mycards-grid">
+           <img src="{{ url_for('static', filename='images/cardblack.jpg') }}"
+     class="card-image">
+    </div>
+</section>
 
 
 {% endblock %}
