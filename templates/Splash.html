@@ -1,0 +1,15 @@
+<!-- Jinja2 for resusability-->
+{% extends "Base.html" %}
+{% block title %}Splash{% endblock %}
+<!-- main content change this per page-->
+{% block content %}
+ <div class="splash-container">
+    <img src="{{ url_for('static', filename='images/VaultGreen.png') }}" 
+         class="splash-image">
+
+    <h1 class="splash-title">, Kia Ora, Welcome to the Critical Vault</h1>
+
+    <a href="{{ url_for('home') }}" class="splash-button">Enter</a>
+</div>
+
+{% endblock %}

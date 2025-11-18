@@ -4,7 +4,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def home():
-    return render_template('Homepage.html') #change to splash  when finished
+    return render_template('Splash.html') #change to splash  when finished
 
 @app.route('/login')
 def login():

@@ -5,7 +5,12 @@
 {% block content %}
   <div class="dashboard-grid">
   <section class="card account-summary">
+
+ {% set placeholder = url_for('static', filename='images/pantera.jpg') %}
+
+
     <h2>Account Summary</h2>
+    <img src="url('{{ placeholder }}')" class="home-image">
     <p>Balance: $2,345.00</p>
   </section>
 
@@ -19,7 +24,7 @@
 
   <section class="card news">
     <h2>Bank News</h2>
-    <p>We’ve upgraded our security systems.</p>
+    <p>We’ve upgraded our security systems. </p>
   </section>
 </div>
 
