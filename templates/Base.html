@@ -10,12 +10,24 @@
 <body>
   <div class="layout-grid">
     <header>
+      {% block header %}
       <div class ="header-title">
-      <h1><a href="{{ url_for('home') }}">Critical Job Bank </a> </h1>
+      <h1><a href="{{ url_for('homepage') }}">Critical Job Bank </a> </h1>
       </div>
-      <a href="Splash.html" class="header-account-link">Kia Ora Mr. Person</a>
+
+      <div class="header-account">
+        <div class="header-account-link">Kia Ora, Mr Person</div>
+
+        <div class="header-dropdown">
+          <a href="{{ url_for('settings') }}">⚙ Settings</a>
+          <a href="{{ url_for('splash') }}">꩜ Logout</a>
+        </div>
+      </div>
+      {% endblock %}
     </header>
+
     <nav class="sidebar">
+      {% block sidebar %}
       <ul>
         <li><a href="{{ url_for('my_accounts') }}">My Accounts</a></li>
         <li><a href="{{ url_for('my_cards') }}">My Cards</a></li>
@@ -26,6 +38,7 @@
         <li><a href="{{ url_for('aboutus') }}">About Us</a></li>
         <li><a href="{{ url_for('help') }}">Help</a></li>
       </ul>
+      {% endblock %}
     </nav>
 
     <main>

@@ -59,13 +59,72 @@ header {
     text-decoration: none;
     transition: all 0.3s ease;
     font-size: 1.15rem;
+    cursor: pointer;
+    position: relative;
 }
 
+.header-account-link::after {
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
 
 /* Subtle koru glow on hover */
 .header-account-link:hover {
     color: white;
     text-shadow: 0 0 10px #94f5c7;
+    content: "▾" #94f5c7;
+}
+
+/* Add arrow only when hovered */
+.header-account-link:hover::after {
+    content: " ▾";           /* the arrow character */
+    position: absolute;
+    right: -20px;            /* adjust horizontal placement */
+    top: 0;
+    font-size: 1rem;
+    color: #94f5c7;          /* jade accent */
+    opacity: 1;
+}
+
+/* Container for greeting + dropdown */
+.header-account {
+    position: relative;
+    display: inline-block;
+    margin-left: auto; /* stays on the right */
+}
+
+/* Dropdown panel */
+.header-dropdown {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 100%; /* directly under header */
+    width: 100%;
+    background: #ffffffdd;
+    border: 2px solid #0a5c40;
+    border-radius: 8px;
+    padding: 5px 0;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(4px);
+    z-index: 2000;
+}
+
+/* Dropdown links */
+.header-dropdown a {
+    display: block;
+    padding: 10px 14px;
+    text-decoration: none;
+    color: #003d29;
+    font-weight: 600;
+}
+
+.header-dropdown a:hover {
+    background: #c7fce7; /* soft koru-themed green */
+}
+
+/* Show menu on hover */
+.header-account:hover .header-dropdown {
+    display: block;
 }
 
 .sidebar {
@@ -195,16 +254,22 @@ main {
 
 /* Image size */
 .splash-image {
-    width: 200px;
+    width: 600px;
     height: auto;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
 /* Title */
 .splash-title {
     font-size: 2.5rem;
     color: #94f5c7;  /* jade tone */
-    margin-bottom: 20px;
+    margin-bottom: 10px;
+}
+
+.splash-title2 {
+    font-size: 2rem;
+    color: #94f5c7;  /* jade tone */
+    margin-bottom: 10px;
 }
 
 /* Button */

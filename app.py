@@ -6,6 +6,14 @@ app = Flask(__name__)
 def home():
     return render_template('Splash.html') #change to splash  when finished
 
+@app.route('/splash')
+def splash():
+    return render_template('Splash.html')
+
+@app.route('/homepage')
+def homepage():
+    return render_template('Homepage.html')
+
 @app.route('/login')
 def login():
     return render_template('Login.html')
@@ -49,6 +57,10 @@ def tutorials():
 @app.route('/help')
 def help():
     return render_template('Help.html')
+
+@app.route('/settings')
+def settings():
+    return render_template('Settings.html')
 
 if __name__ == '__main__':
     app.run(debug=True)
