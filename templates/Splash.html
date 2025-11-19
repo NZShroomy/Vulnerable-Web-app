@@ -2,14 +2,32 @@
 {% extends "Base.html" %}
 {% block title %}Splash{% endblock %}
 <!-- main content change this per page-->
-{% block content %}
- <div class="splash-container">
-    <img src="{{ url_for('static', filename='images/VaultGreen.png') }}" 
-         class="splash-image">
-
-    <h1 class="splash-title">, Kia Ora, Welcome to the Critical Vault</h1>
-
-    <a href="{{ url_for('home') }}" class="splash-button">Enter</a>
+{% block header %}
+<!-- Optional: a simpler or empty header for splash -->
+<div class="header-title">
+    <h1>Welcome to Critical Job Bank</h1>
 </div>
+{% endblock %}
 
+{% block sidebar %}
+<!-- Optional: empty sidebar or minimal links -->
+<ul>
+    <li><a href="{{ url_for('homepage') }}">HOME (while in build)</a></li> 
+    <li><a href="#features">Features</a></li>
+    <li><a href="#owasp">OWASP Top 10</a></li>
+    <li><a href="#offers">What This App Offers</a></li>
+    <li><a href="#dev">Secure Development Practices</a></li>
+    <li><a href="#contact">Contact Us</a></li>
+    <li><a href="#about">About Us</a></li>
+    <li><a href="https://github.com/your-repo" target="_blank">GitHub Repo</a></li>
+</ul>
+{% endblock %}
+
+{% block content %}
+<div class="splash-container">
+    <img src="{{ url_for('static', filename='images/VaultGreenNarrow.png') }}" class="splash-image">
+    <h1 class="splash-title">꩜ tena koe, nau mai haere mai. Nau mai ki te whare taonga. ꩜</h1>
+    <h1 class="splash-title2">Hello, we welcome you to the Vault!</h1>
+    <a href="{{ url_for('login') }}" class="splash-button">Enter</a>
+</div>
 {% endblock %}
