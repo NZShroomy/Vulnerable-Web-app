@@ -450,6 +450,7 @@ main {
     background-color: #0a5c40;
 }
 
+
 @media (max-width: 768px) {
     .info-card {
         flex-direction: column;

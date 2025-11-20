@@ -1,12 +1,13 @@
 #tutorialFab {
     position: fixed;
     bottom: 20px;
-    right: 30px; /* sits next to Attack button */
+    right: 30px;
+    /* sits next to Attack button */
     z-index: 1500;
 }
 
 .fab-toggle {
-    background: #003d29; 
+    background: #003d29;
     color: white;
     width: 56px;
     height: 56px;
@@ -14,8 +15,13 @@
     border: none;
     font-size: 26px;
     cursor: pointer;
-    box-shadow: 0 6px 18px rgba(0,0,0,0.3);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 0;
 }
+
 .fab-toggle:hover {
     background: #0d7554;
 }
@@ -24,7 +30,7 @@
 .tutorial-modal {
     position: fixed;
     inset: 0;
-    background: rgba(0,0,0,0.55);
+    background: rgba(0, 0, 0, 0.55);
     display: none;
     justify-content: center;
     align-items: center;
@@ -41,7 +47,7 @@
     width: 500px;
     padding: 30px;
     border-radius: 14px;
-    box-shadow: 0 4px 25px rgba(0,0,0,0.4);
+    box-shadow: 0 4px 25px rgba(0, 0, 0, 0.4);
     position: relative;
     animation: fadeIn 0.3s ease;
 }
@@ -61,6 +67,7 @@
 .tutorial-page {
     display: none;
 }
+
 .tutorial-page.active {
     display: block;
 }
@@ -85,6 +92,7 @@
     justify-content: center;
     font-size: 22px;
 }
+
 .tutorial-btn:hover {
     background: #0d7554;
 }
