@@ -3,29 +3,55 @@
 {% block title %}Homepage{% endblock %}
 <!-- main content change this per page-->
 {% block content %}
-  <div class="dashboard-grid">
-  <section class="card account-summary">
+<div class="home-container">
 
-      <h2>Account Summary</h2>
-      <img src="/static//Images/Pantera.jpg" class="home-image">
-      <p>Balance: $2,345.00</p>
-  </section>
+    <h2 class="home-title">Kia Ora, Welcome back to the Critical Vault</h2>
 
-  <section class="card recent-transactions">
-    <h2>Recent Transactions</h2>
-    <ul>
-      <li>Payment to Grocery Mart - $54.20</li>
-      <li><hr width: 75%></li>
-      <li>Deposit - $500.00</li>
-      <li><hr width: 75%></li>
-    </ul>
-  </section>
+    <div class="card-grid">
 
-  <section class="card news">
-    <h2>Bank News</h2>
-    <p>We’ve upgraded our security systems. </p>
-  </section>
-</div>
+        <!-- Account Summary -->
+        <a href="{{ url_for('my_accounts') }}" class="card-link">
+            <div class="card">
+                <img src="{{ url_for('static', filename='images/vdop16-9.jpg') }}" 
+                     alt="Account Summary" class="home-image">
+                <h3>Account Summary - Cheque</h3>
+                <p>Current balance - $3095.41. You have 4 other active accounts.</p>
+            </div>
+        </a>
 
+        <!-- Recent Transactions -->
+        <a href="{{ url_for('transfer_funds') }}" class="card-link">
+            <div class="card recent-transactions">
+                <img src="{{ url_for('static', filename='images/techy.jpg') }}" 
+                     alt="Recent Transactions" class="home-image">
 
+                <h3>Recent Transactions</h3>
+
+                <ul>
+                    <li>Payment to John - $120.00</li>
+                    <li>Deposit - $500.00</li>
+                    <li>Transfer to Savings - $200.00</li>
+                </ul>
+
+                <p>You have 5 new transactions this week.</p>
+            </div>
+        </a>
+
+        <!-- News -->
+        <div class="card">
+            <img src="{{ url_for('static', filename='images/16-9news.jpg') }}" 
+                 alt="Bank News" class="home-image">
+            <h3>Latest News</h3>
+            <p>Stay updated with account alerts, updates, and security notices.</p>
+        </div>
+
+        <!-- Coming Soon -->
+        <div class="card coming-soon">
+            <img src="{{ url_for('static', filename='images/Vault16-9.png') }}" 
+                 alt="Apply for Insurance" class="home-image">
+            <h3>Apply for Insurance</h3>
+            <p>Coming Soon — new insurance products will be available shortly.</p>
+        </div>
+    </div>
+  </div>
 {% endblock %}

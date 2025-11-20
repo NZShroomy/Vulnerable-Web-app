@@ -4,13 +4,35 @@
 {% block title %}My Cards{% endblock %}
 <!-- main content change this per page-->
 {% block content %}
-<section class = mycards-container><h1 class="mycards-title">My Cards </h1>
-   
+<div class="mycards-container">
+
+    <h2 class="mycards-title">My Cards</h2>
+
     <div class="mycards-grid">
-           <img src="{{ url_for('static', filename='images/cardblack.jpg') }}"
-     class="card-image">
+
+        <div class="info-card">
+            <img src="{{ url_for('static', filename='images/cardblack.jpg') }}" 
+                 alt="Card Black" class="info-image">
+
+            <div class="info-text">
+                <h3>Card 1 - Cheque</h3>
+                <p>Current Balance - $3095.41</p>
+            </div>
+        </div>
+
+        <hr class="card-divider">
+
+        <div class="info-card">
+            <img src="{{ url_for('static', filename='images/cardwhite.jpg') }}" 
+                 alt="Card White" class="info-image">
+
+            <div class="info-text">
+                <h3>Card 2 - Savings</h3>
+                <p>Current Balance - $41,688.03</p>
+            </div>
+        </div>
+
     </div>
-</section>
 
-
+</div>
 {% endblock %}
