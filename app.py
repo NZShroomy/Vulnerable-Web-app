@@ -2,6 +2,7 @@ from flask import Flask, Blueprint, render_template, request, redirect, url_for
 from signup import signup_bp
 from login import login_bp
 from forgot_bp import forgot_bp
+from transfer_bp import transfer_bp
 from CreateDB import create_tables
 
 app = Flask(__name__)
@@ -12,6 +13,7 @@ create_tables() # Ensure the database tables are created
 app.register_blueprint(signup_bp)
 app.register_blueprint(login_bp)
 app.register_blueprint(forgot_bp)
+app.register_blueprint(transfer_bp)
 
 
 @app.route('/')
@@ -28,7 +30,14 @@ def about():
 
 @app.route('/my_accounts')
 def my_accounts():
-    return render_template('My_Accounts.html')
+    accounts = [
+        {"id": 1, "name": "Everyday Account", "balance": 3095.41},
+        {"id": 2, "name": "Savings Account", "balance": 8200.45},
+        {"id": 3, "name": "Holiday Fund", "balance": 1250.00},
+        {"id": 4, "name": "Investments", "balance": 23000.87},
+        {"id": 5, "name": "Emergency Account", "balance": 600.00},
+    ]
+    return render_template('My_Accounts.html', accounts=accounts)
 
 @app.route('/aboutus')
 def aboutus():
@@ -37,10 +46,6 @@ def aboutus():
 @app.route('/my_cards')
 def my_cards():
     return render_template('Mycards.html')
-
-@app.route('/transfer_funds')
-def transfer_funds():
-    return render_template('TransferFunds.html')
 
 @app.route('/my_insurance')
 def my_insurance():

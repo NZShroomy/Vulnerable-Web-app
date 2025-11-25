@@ -17,8 +17,8 @@
     <li><a href="#offers">What This App Offers</a></li>
     <li><a href="#dev">Secure Development Practices</a></li>
     <li><a href="#contact">Contact Us</a></li>
-    <li><a href="{{ url_for('aboutus') }}">About Us</a></li>
-    <li><a href="{{ url_for('help') }}">Help</a></li>
+    <li><a href="#about us">About Us</a></li>
+    <li><a href="#help">Help</a></li>
     <li><a href="https://github.com/NZShroomy/Vulnerable-Web-app" target="_blank">GitHub Repo</a></li>
 </ul>
 {% endblock %}
@@ -26,8 +26,8 @@
 {% block content %}
 <div class="splash-container">
     <img src="{{ url_for('static', filename='images/VaultGreenNarrow.png') }}" class="splash-image">
-    <h1 class="splash-title">꩜ tena koe, nau mai haere mai. Nau mai ki te whare taonga. ꩜</h1>
-    <h1 class="splash-title2">Hello, we welcome you to the Vault!</h1>
-    <a href="{{ url_for('login_bp.login') }}" class="splash-button">Enter</a>
+    <h1 class="splash-title">꩜ tena koe, nau mai haere mai. Nau mai ki te whare taonga.</h1>
+    <h1 class="splash-title2">꩜ Hello, we welcome you to the Vault!</h1>
+    <a href="{{ url_for('login_bp.login') }}" class="splash-button">Let's Get Started!</a>
 </div>
 {% endblock %}

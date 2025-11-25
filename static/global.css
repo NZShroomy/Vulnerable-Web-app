@@ -198,6 +198,22 @@ main {
     box-shadow: 0 1px 4px rgba(0,0,0,0.3);
 }
 
+.account-card-link {
+    text-decoration: none;
+    color: inherit;
+}
+
+.accounts-container .account-card:hover {
+    transform: translateY(-6px) scale(1.02);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.22);
+    background-color: #004632; /* subtle highlight */
+    transition: all 0.3s ease;
+}
+
+.accounts-container .account-card-link:hover {
+    cursor: pointer;
+}
+
 .account-image {
     width: 100%;
     /* Use modern aspect-ratio where available */
@@ -244,12 +260,15 @@ main {
 
 /* Center the splash page vertically */
 .splash-container {
-    height: 100vh;
+    height: 80vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
+    background: #0a5c40;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
 }
 
 /* Image size */
@@ -257,6 +276,8 @@ main {
     width: 600px;
     height: auto;
     margin-bottom: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
 }
 
 /* Title */
@@ -395,6 +416,17 @@ main {
     padding: 20px;
 }
 
+.mycards-container .info-card:hover {
+    transform: translateY(-6px) scale(1.02);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.22);
+    background-color: #004632; /* subtle highlight */
+    transition: all 0.3s ease;
+}
+
+.mycards-container .info-card-link:hover {
+    cursor: pointer;
+}
+
 .mycards-title {
     font-size: 2.5rem;
     text-align: center;
@@ -461,4 +493,91 @@ main {
     .info-image, .info-text {
         width: 100%;
     }
+}
+
+.transfer-container {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+.transfer-title {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2rem;
+    color: #003d29;
+}
+
+.transfer-grid {
+    display: grid;
+    grid-template-columns: 1fr 60px 1fr;
+    gap: 20px;
+    align-items: center;
+}
+
+.transfer-column {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0px 2px 6px rgba(0,0,0,0.12);
+}
+
+.transfer-column h2 {
+    margin-bottom: 15px;
+    color: #003d29;
+}
+
+.transfer-column label {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.transfer-column input,
+.transfer-column select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+}
+
+.transfer-arrow {
+    font-size: 3rem;
+    text-align: center;
+    color: #006f45;
+    font-weight: bold;
+}
+
+.transfer-actions {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.confirm-btn {
+    padding: 12px 30px;
+    background: #006f45;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.confirm-btn:hover {
+    background: #005736;
+}
+
+.cancel-btn {
+    padding: 12px 30px;
+    background: #ccc;
+    color: black;
+    border-radius: 8px;
+    text-decoration: none;
+}
+
+.cancel-btn:hover {
+    background: #aaa;
 }
