@@ -5,5 +5,89 @@
 <!-- main content change this per page-->
 {% block content %}
 
+<link rel="stylesheet" href="{{ url_for('static', filename='global.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='TransferFunds.css') }}">
+
+<script>
+const accountData = {
+    "Everyday Account": 3095.41,
+    "Savings Account": 8200.45,
+    "Holiday Fund": 1250.00,
+    "Investments": 23000.87,
+    "Emergency Account": 600.00
+};
+</script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const fromAccountSelect = document.getElementById('fromAccount');
+    const balanceInput = document.getElementById('availableBalance');
+
+    fromAccountSelect.addEventListener('change', () => {
+        const selected = fromAccountSelect.value;
+
+        if (accountData[selected] !== undefined) {
+            balanceInput.value = "$" + accountData[selected].toLocaleString();
+        } else {
+            balanceInput.value = "";
+        }
+    });
+});
+</script>
+
+<div class="transfer-container">
+
+    <h1 class="transfer-title">Transfer Funds</h1>
+
+    <div class="transfer-grid">
+
+        <!-- LEFT COLUMN -->
+        <div class="transfer-column">
+            <h2>From Account</h2>
+            
+            <label>Select Account</label>
+            <select id="fromAccount">
+                <option disabled selected>Select an account</option>
+                <option>Everyday Account</option>
+                <option>Savings Account</option>
+                <option>Holiday Fund</option>
+                <option>Investments</option>
+                <option>Emergency Account</option>
+            </select>
+
+            <label>Available Balance</label>
+            <input id="availableBalance" type="text" value="" disabled>
+        </div>
+
+        <!-- ARROW -->
+        <div class="transfer-arrow">
+            ➜
+        </div>
+
+        <!-- RIGHT COLUMN -->
+        <div class="transfer-column">
+            <h2>To Account</h2>
+
+            <label>Select Account</label>
+            <select>
+                <option>Everyday Account</option>
+                <option>Savings Account</option>
+                <option>Holiday Fund</option>
+                <option>Investments</option>
+                <option>Emergency Account</option>
+            </select>
+
+            <label>Transfer Amount</label>
+            <input type="number" placeholder="Enter amount">
+        </div>
+
+    </div>
+
+    <div class="transfer-actions">
+        <button class="confirm-btn">Confirm Transfer</button>
+        <a href="{{ url_for('my_accounts') }}" class="cancel-btn">Cancel</a>
+    </div>
+
+</div>
 
 {% endblock %}

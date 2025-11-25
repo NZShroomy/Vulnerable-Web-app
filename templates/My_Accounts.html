@@ -3,24 +3,61 @@
 {% extends "Base.html" %}
 {% block title %}My Accounts{% endblock %}
 <!-- main content change this per page-->
+ {% block styles %}
+<link rel="stylesheet" href="{{ url_for('static', filename='accounts.css') }}">
+{% endblock %}
+
 {% block content %}
-<section class = accounts-container><h1 class="acc-title">My Accounts </h1>
-    
+
+<section class="accounts-container">
+    <h1 class="acc-title">My Accounts</h1>
 
     {% set placeholder = url_for('static', filename='images/pantera.jpg') %}
 
-  
-    
     <div class="accounts-grid">
-           <!-- placeholder image for accounts -->
-            {% for i in range(5) %}
-                <div class="account-card">
-                    <div class="account-image" style="background-image: url('{{ placeholder }}')" aria-hidden="true"></div>
-                    <div class="account-name">Account {{ i + 1 }}</div>
-                </div>
-            {% endfor %}
+
+        {% for acc in accounts %}
+        <div class="account-wrapper">
+
+            <!-- CLICKABLE CARD -->
+            <div class="account-card dropdown-toggle" data-target="dropdown-{{ acc.id }}">
+                <div class="account-image" style="background-image: url('{{ placeholder }}')" aria-hidden="true"></div>
+                <div class="account-name">{{ acc.name }}</div>
+            </div>
+
+            <!-- DROPDOWN SECTION -->
+            <div id="dropdown-{{ acc.id }}" class="account-dropdown hidden">
+                <p><strong>Balance:</strong> ${{ '%.2f'|format(acc.balance) }}</p>
+
+                <a href="{{ url_for('transfer_bp.transfer_funds_page', account_id=acc.id) }}" class="dropdown-btn">
+                    Transfer Funds
+                </a>
+            </div>
+
+        </div>
+        {% endfor %}
+
     </div>
 </section>
-
-
 {% endblock %}
+{% block scripts %}
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    document.querySelectorAll(".dropdown-toggle").forEach(card => {
+        card.addEventListener("click", () => {
+            const targetId = card.getAttribute("data-target");
+            const dropdown = document.getElementById(targetId);
+
+            // Close any other open dropdowns (optional)
+            document.querySelectorAll(".account-dropdown").forEach(d => {
+                if (d !== dropdown) d.classList.add("hidden");
+            });
+
+            // Toggle this one
+            dropdown.classList.toggle("hidden");
+        });
+    });
+});
+</script>
+{% endblock %}
+
