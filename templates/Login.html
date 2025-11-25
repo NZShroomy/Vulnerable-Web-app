@@ -36,15 +36,29 @@
                                                 <a href="">Reset</a>
                                         </p>
                                         <p class="signup">Don't have an account?
-                                                <a href="/templates/Signup.html"> Sign up</a>
+                                                <a href="{{ url_for('signup.signup_page') }}"> Sign up</a>
                                         </p>
-                                        <!-- "{{ url_for('signup') }}"  change for flaks when not using live server') }}" --->
+                                        
                                 </div>
                         </form>
                 </div>
         </div>
         {% include 'components/attack_buttons.html' %}
         <script src="{{ url_for('static', filename='attackbutton.js') }}"></script>
+        
+        <script>
+    // Check if URL has a "msg" parameter
+    const params = new URLSearchParams(window.location.search);
+    const msg = params.get('msg');
+
+    if (msg) {
+        alert(msg); // small popup
+        
+        setTimeout(() => {
+            window.location.href = window.location.pathname;
+        }, 2000); 
+    }
+</script>
 </body>
 
 </html>
