@@ -1,5 +1,7 @@
 from flask import Flask, Blueprint, render_template, request, redirect, url_for
 from signup import signup_bp
+from login import login_bp
+from forgot_bp import forgot_bp
 from CreateDB import create_tables
 
 app = Flask(__name__)
@@ -8,6 +10,8 @@ app.secret_key = "123"
 create_tables() # Ensure the database tables are created
 
 app.register_blueprint(signup_bp)
+app.register_blueprint(login_bp)
+app.register_blueprint(forgot_bp)
 
 
 @app.route('/')
@@ -17,10 +21,6 @@ def splash():
 @app.route('/homepage')
 def homepage():
     return render_template('Homepage.html')
-
-@app.route('/login')
-def login():
-    return render_template('Login.html')
 
 @app.route('/about')
 def about():

@@ -120,6 +120,26 @@ html,body{
     text-decoration: underline;
 }
 
+.flash {
+    margin-bottom: 12px;
+    padding: 10px 12px;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+.flash-success {
+    background: rgba(56, 161, 105, 0.15);
+    color: #2f855a;
+    border: 1px solid rgba(56, 161, 105, 0.3);
+}
+
+.flash-error {
+    background: rgba(229, 62, 62, 0.15);
+    color: #c53030;
+    border: 1px solid rgba(229, 62, 62, 0.3);
+}
+
 
 
 @media (max-width:420px){

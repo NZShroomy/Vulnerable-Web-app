@@ -1,4 +1,4 @@
-from flask import Blueprint, request, render_template, redirect, url_for
+from flask import Blueprint, request, render_template, redirect, url_for, flash
 import sqlite3
 
 
@@ -22,6 +22,7 @@ def signup_page():
         finally:
             conn.close()
 
-        return redirect(url_for("login", msg='Account created successfully! Please log in.'))
-
+        flash("Account created successfully! Please log in.", "success")
+        return redirect(url_for('login_bp.login'))
+    
     return render_template("Signup.html")
