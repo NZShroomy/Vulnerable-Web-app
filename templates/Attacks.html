@@ -1,8 +1,75 @@
 
 <!-- Jinja2 for resusability-->
 {% extends "Base.html" %}
-{% block title %}Homepage{% endblock %}
+{% block title %}Attacks{% endblock %}
 <!-- main content change this per page-->
 {% block content %}
+
+<h1 class="attack-title">Attack Types</h1>
+
+<div class="attack-grid">
+
+    <!-- SQL Injection -->
+    <div class="attack-card sql-card" data-target="tutPageSQL">
+        <div class="icon">
+            <!-- Database Icon -->
+            <svg width="45" height="45" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
+                <path d="M3 5v6c0 1.7 4 3 9 3s9-1.3 9-3V5"></path>
+                <path d="M3 11v6c0 1.7 4 3 9 3s9-1.3 9-3v-6"></path>
+            </svg>
+        </div>
+        <h2>SQL Injection</h2>
+        <p>Manipulating database queries through unsafe input handling.</p>
+    </div>
+
+    <!-- Authentication Bypass -->
+    <div class="attack-card auth-card" data-target="tutPageAuth">
+        <div class="icon">
+            <svg width="45" height="45" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+            </svg>
+        </div>
+        <h2>Authentication Bypass</h2>
+        <p>Breaking or skipping login protections.</p>
+    </div>
+
+    <!-- XSS -->
+    <div class="attack-card xss-card" data-target="tutPageXSS">
+        <div class="icon">
+            <svg width="45" height="45" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <polyline points="16 18 22 12 16 6"></polyline>
+                <polyline points="8 6 2 12 8 18"></polyline>
+            </svg>
+        </div>
+        <h2>Cross-Site Scripting (XSS)</h2>
+        <p>Injecting malicious JavaScript into user browsers.</p>
+    </div>
+
+    <!-- Access Control -->
+    <div class="attack-card ac-card" data-target="tutPageAC">
+        <div class="icon">
+            <svg width="45" height="45" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <rect x="3" y="11" width="18" height="11" rx="2"></rect>
+                <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+            </svg>
+        </div>
+        <h2>Access Control</h2>
+        <p>Accessing pages or data users should not have.</p>
+    </div>
+
+    <!-- Server-Side Execution -->
+    <div class="attack-card sde-card" data-target="tutPageSDE">
+        <div class="icon">
+            <svg width="45" height="45" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <polyline points="4 17 10 11 4 5"></polyline>
+                <line x1="12" y1="19" x2="20" y2="19"></line>
+            </svg>
+        </div>
+        <h2>Server-Side Execution</h2>
+        <p>Running commands on the server from user input.</p>
+    </div>
+
+</div>
 
 {% endblock %}

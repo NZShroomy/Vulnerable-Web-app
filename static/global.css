@@ -158,11 +158,11 @@ header {
 /* MAIN CONTENT AREA */
 main {
     grid-area: main;
-    display: grid;
+    display: block; /* not grid, just a container */
     text-align: center;
-    padding: 20px 20px 20px 20px;
-    height: calc(100vh - 70px);
-    overflow-y: auto;    /* enable scrolling only in content */
+    padding: 20px;
+    overflow-y: visible;    /* remove scrolling on main */
+    height: auto; /* lets page grow */
 }
 
 .accounts-container {
@@ -581,3 +581,65 @@ main {
 .cancel-btn:hover {
     background: #aaa;
 }
+
+/* ---------- Attack Title ---------- */
+.attack-title {
+    text-align: center;
+    font-size: 2.2rem;
+    margin: 20px 0 15px; /* small gap below title */
+    font-weight: 700;
+    color: #003d29; /* optional: match your color scheme */
+}
+
+/* ---------- Attack Grid ---------- */
+.attack-grid {
+    margin-top: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 25px;
+    padding: 20px 40px; 
+}
+
+/* ---------- Attack Cards ---------- */
+.attack-card {
+    display: block;
+    background: #D9D9D9;
+    padding: 25px;
+    border-radius: 14px;
+    box-shadow: 0 5px 12px rgba(0,0,0,0.12);
+    text-decoration: none;
+    color: #111;
+    transition: 0.25s ease;
+}
+
+/* Hover animation */
+.attack-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 10px 22px rgba(0,0,0,0.20);
+    background-color: #0d7554;
+    transition: 0.3s ease;
+    opacity: 75%;
+}
+
+/* Icon spacing */
+.attack-card .icon {
+    margin-bottom: 12px;
+    color: inherit;
+}
+
+/* Titles & Descriptions */
+.attack-card h2 {
+    font-size: 1.3rem;
+    margin-bottom: 8px;
+}
+.attack-card p {
+    font-size: 1rem;
+    line-height: 1.4;
+}
+
+/* ---------- Colour Coding ---------- */
+.sql-card { border-left: 6px solid #e53935; color: #b71c1c; }
+.auth-card { border-left: 6px solid #1e88e5; color: #0d47a1; }
+.xss-card { border-left: 6px solid #fb8c00; color: #e65100; }
+.ac-card { border-left: 6px solid #8e24aa; color: #4a148c; }
+.sde-card { border-left: 6px solid #43a047; color: #1b5e20; }
