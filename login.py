@@ -31,3 +31,9 @@ def login():
             return redirect(url_for('login_bp.login'))
     
     return render_template("Login.html")
+
+@login_bp.route('/logout')
+def logout():
+        session.clear()  # removes all session data
+        flash("You have been logged out", "success")
+        return redirect(url_for('login_bp.login')) 
