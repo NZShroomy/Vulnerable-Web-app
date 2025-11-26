@@ -13,7 +13,7 @@
     <header>
       {% block header %}
       <div class ="header-title">
-      <h1><a href="{{ url_for('homepage') }}">Critical Job Bank </a> </h1>
+        <h1><a href="{{ url_for('homepage') }}">Critical Job Bank </a></h1>
       </div>
 
       <div class="header-account">
@@ -43,20 +43,35 @@
     </nav>
 
     <main>
-      {% block content %}
-
-      {% endblock %}
+      {% block content %}{% endblock %}
     </main>
   </div>
 
-   <!-- attack buttons -->
+  <!-- attack buttons -->
   {% include "components/attack_buttons.html" %}
   {% include "components/attack_overlay.html" %}
   <script src="{{ url_for('static', filename='attackbutton.js') }}"></script>
   <link rel="stylesheet" href="{{ url_for('static', filename='attackbutton.css') }}">
+
   <!-- Tutorial Button -->
   {% include "components/tutorialbutton.html" %}
   <script src="{{ url_for('static', filename='tutorialbutton.js') }}"></script>
   <link rel="stylesheet" href="{{ url_for('static', filename='tutorialbutton.css') }}">
+
+  <!-- Persistent settings (dark mode, font size, etc.) -->
+  <script>
+  document.addEventListener("DOMContentLoaded", () => {
+      // Dark mode
+      if (localStorage.getItem('darkMode') === 'true') {
+          document.body.classList.add('dark-mode');
+      } else {
+          document.body.classList.remove('dark-mode');
+      }
+
+      // Example: font size (optional)
+      const savedFont = localStorage.getItem('fontSize');
+      if (savedFont) document.body.style.fontSize = savedFont + 'px';
+  });
+  </script>
 </body>
 </html>

@@ -1,8 +1,33 @@
 
 <!-- Jinja2 for resusability-->
 {% extends "Base.html" %}
-{% block title %}Homepage{% endblock %}
+{% block title %}Help{% endblock %}
 <!-- main content change this per page-->
 {% block content %}
+<h1 class="attack-title">Help & Support</h1>
 
+<div class="mycards-container">
+    <h2 class="mycards-title">Frequently Asked Questions</h2>
+    <div class="mycards-grid">
+        <div class="info-card">
+            <div class="info-text">
+                <h3>How do I reset my password?</h3>
+                <p>You can reset your password by clicking the 'Forgot Password' link on the login page.</p>
+            </div>
+        </div>
+        <div class="info-card">
+            <div class="info-text">
+                <h3>How do I transfer funds?</h3>
+                <p>Go to the 'Transfer Funds' section from the sidebar and follow the instructions.</p>
+            </div>
+        </div>
+        <div class="info-card">
+            <div class="info-text">
+                <h3>Can I provide feedback?</h3>
+                <p>Yes! Click the button below to fill in our feedback form.</p>
+                <a href="#" class="card-link"><button class="splash-button">Give Feedback</button></a>
+            </div>
+        </div>
+    </div>
+</div>
 {% endblock %}

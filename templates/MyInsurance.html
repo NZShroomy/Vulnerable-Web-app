@@ -1,9 +1,50 @@
 
 <!-- Jinja2 for resusability-->
 {% extends "Base.html" %}
-{% block title %}Homepage{% endblock %}
+{% block title %}MyInsurance{% endblock %}
 <!-- main content change this per page-->
 {% block content %}
+<h1 class="attack-title">My Insurance</h1>
 
+<div class="attack-grid">
+    <div class="attack-card sde-card">
+        <div class="icon">
+            <img src="{{ url_for('static', filename='images/home.svg') }}" alt="Home Insurance" width="45" height="45">
+        </div>
+        <h2>Home Insurance</h2>
+        <p>Protect your property against damage or loss.</p>
+    </div>
 
+    <div class="attack-card auth-card">
+        <div class="icon">
+            <img src="{{ url_for('static', filename='images/vehicle.svg') }}" alt="Vehicle Insurance" width="45" height="45">
+        </div>
+        <h2>Vehicle Insurance</h2>
+        <p>Keep your vehicle covered for accidents and theft.</p>
+    </div>
+
+    <div class="attack-card ac-card">
+        <div class="icon">
+            <img src="{{ url_for('static', filename='images/contents.svg') }}" alt="Contents Insurance" width="45" height="45">
+        </div>
+        <h2>Contents Insurance</h2>
+        <p>Protect your valuables inside your home.</p>
+    </div>
+
+    <div class="attack-card sql-card">
+        <div class="icon">
+            <img src="{{ url_for('static', filename='images/life.svg') }}" alt="Life Insurance" width="45" height="45">
+        </div>
+        <h2>Life Insurance</h2>
+        <p>Financial security for your loved ones.</p>
+    </div>
+
+    <div class="attack-card xss-card">
+        <div class="icon">
+            <img src="{{ url_for('static', filename='images/health.svg') }}" alt="Health Insurance" width="45" height="45">
+        </div>
+        <h2>Health Insurance</h2>
+        <p>Medical coverage for you and your family.</p>
+    </div>
+</div>
 {% endblock %}

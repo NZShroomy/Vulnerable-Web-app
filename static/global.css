@@ -7,6 +7,12 @@ body {
     color: white;
 }
 
+body.dark-mode {
+  background: #111;
+  color: #eee;
+}
+
+
 .layout-grid {
     display: grid;
     grid-template-areas:
@@ -34,6 +40,10 @@ header {
     
     /* soft glow effect like polished stone */
     box-shadow: 0 2px 12px rgba(0, 100, 60, 0.6);
+}
+
+header.dark-mode { 
+    background: #111; 
 }
 
 /* Koru-inspired curved shape on bottom edge of header */
@@ -135,6 +145,10 @@ header {
     border-right: 2px solid #333;
     height: calc(100vh);
     overflow: auto;
+}
+
+.sidebar.dark-mode { 
+    background: #111; 
 }
 
 .sidebar ul {
@@ -249,13 +263,11 @@ main {
 }
 
 .acc-title {
-    font-size: 3rem;
-    font-weight: 400;
-    margin-bottom: 50px;
-    color: #e6fff2;
     text-align: center;
-    position: relative;
-    color: black;
+    font-size: 2.2rem;
+    margin: 20px 0 15px; /* small gap below title */
+    font-weight: 700;
+    color: #003d29; /* optional: match your color scheme */
 }
 
 /* Center the splash page vertically */
@@ -308,14 +320,14 @@ main {
     background: #0a7d55;
 }
 
-/* Container for homepage sections */
+/* ---------------- CONTAINER ---------------- */
 .home-container {
     max-width: 1100px;
     margin: 0 auto;
     padding: 20px;
 }
 
-/* ------------- GRID LAYOUT ------------- */
+/* ---------------- GRID LAYOUT ---------------- */
 .card-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr); /* 2 cards per row */
@@ -323,8 +335,8 @@ main {
     margin-top: 20px;
 }
 
-/* ------------- CARD BASE STYLE ------------- */
-.card {
+/* ---------------- CARD BASE STYLE ---------------- */
+.card, .ins-card, .acc-card {
     background: #003d29; /* dark pounamu green */
     border-radius: 12px;
     padding: 20px;
@@ -333,23 +345,30 @@ main {
     flex-direction: column;
     align-items: center;
     overflow: hidden;
-    width: 100%;              /* override old max-width: 600px */
+    width: 100%;
 }
 
 /* Card text */
-.card h3 {
+.card h3, .ins-card h3, .acc-card h3 {
     margin-top: 0;
     color: #94f5c7;  /* light mint highlight */
     text-align: center;
 }
 
-.card p {
+.card p, .ins-card p, .acc-card p {
     margin-bottom: 0;
     text-align: center;
     color: #e9fff6;
 }
 
-/* ------------- IMAGE STYLE ------------- */
+/* ---------------- LINK STYLE ---------------- */
+.card-link, .ins-card-link, .acc-card-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+/* ---------------- IMAGE STYLE ---------------- */
 .home-image {
     width: 100%;
     aspect-ratio: 16 / 9;
@@ -360,7 +379,7 @@ main {
     box-shadow: 0 4px 10px rgba(0,0,0,0.15);
 }
 
-/* ------------- RECENT TRANSACTIONS LIST ------------- */
+/* ---------------- RECENT TRANSACTIONS ---------------- */
 .recent-transactions ul {
     list-style: none;
     padding: 0;
@@ -377,32 +396,23 @@ main {
     border-bottom: none;
 }
 
-/* ------------- CARD LINKS / HOVER ------------- */
-.card-link {
-    text-decoration: none;
-    color: inherit;
-    display: block;
-}
-
-/* Hover for ALL cards (linked or not) */
-.home-container .card:hover {
+/* ---------------- CARD HOVER ---------------- */
+.home-container .card:hover,
+.home-container .ins-card:hover,
+.home-container .acc-card:hover {
     transform: translateY(-6px) scale(1.02);
     box-shadow: 0 10px 25px rgba(0,0,0,0.22);
     background-color: #004632; /* subtle highlight */
     transition: all 0.3s ease;
 }
 
-.home-container .card-link:hover {
+.home-container .card-link:hover,
+.home-container .ins-card-link:hover,
+.home-container .acc-card-link:hover {
     cursor: pointer;
 }
 
-/* ------------- COMING SOON CARD ------------- */
-.coming-soon {
-    opacity: 0.65;
-    pointer-events: none; /* disabled */
-}
-
-/* ------------- RESPONSIVE ------------- */
+/* ---------------- RESPONSIVE ---------------- */
 @media (max-width: 768px) {
     .card-grid {
         grid-template-columns: 1fr; /* stack cards */
@@ -637,9 +647,91 @@ main {
     line-height: 1.4;
 }
 
-/* ---------- Colour Coding ---------- */
-.sql-card { border-left: 6px solid #e53935; color: #b71c1c; }
-.auth-card { border-left: 6px solid #1e88e5; color: #0d47a1; }
-.xss-card { border-left: 6px solid #fb8c00; color: #e65100; }
-.ac-card { border-left: 6px solid #8e24aa; color: #4a148c; }
-.sde-card { border-left: 6px solid #43a047; color: #1b5e20; }
+/* ---------- Attack Colour Coding ---------- */
+.sql-card { 
+    border-left: 6px solid #e53935; 
+    color: #b71c1c; 
+}
+.auth-card { 
+    border-left: 6px solid #1e88e5; 
+    color: #0d47a1; 
+}
+.xss-card { 
+    border-left: 6px solid #fb8c00; 
+    color: #e65100; 
+}
+.ac-card { 
+    border-left: 6px solid #8e24aa; 
+    color: #4a148c; 
+}
+.sde-card { 
+    border-left: 6px solid #43a047; 
+    color: #1b5e20; 
+}
+
+.aboutus-container {
+max-width: 900px;
+margin: 50px auto;
+padding: 20px;
+}
+
+
+.aboutus-card {
+background: #D9D9D9;
+border-radius: 15px;
+border-left: 6px solid #43a047; 
+box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+padding: 30px;
+text-align: center;
+}
+
+
+.aboutus-card img {
+width: 180px;
+height: auto;
+margin-bottom: 20px;
+}
+
+
+.aboutus-card h2 {
+margin-top: 0;
+color: #003d29;
+}
+
+
+.aboutus-card p {
+line-height: 1.7;
+font-size: 1.1rem;
+color: #333;
+}
+
+.settings-title {
+    text-align: center;
+    font-size: 2.2rem;
+    margin: 20px 0 15px; /* small gap below title */
+    font-weight: 700;
+    color: #003d29; /* optional: match your color scheme */
+}
+
+.settings-list {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    max-width: 500px;
+    margin: 20px auto;
+    gap: 20px;
+}
+
+.settings-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.settings-item .icon {
+    flex-shrink: 0;
+}
+
+.settings-item .text {
+    flex-grow: 1;
+}
