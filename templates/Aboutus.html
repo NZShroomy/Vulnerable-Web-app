@@ -1,8 +1,24 @@
 
 <!-- Jinja2 for resusability-->
 {% extends "Base.html" %}
-{% block title %}Homepage{% endblock %}
+{% block title %}Aboutus{% endblock %}
 <!-- main content change this per page-->
 {% block content %}
 
+<div class="aboutus-container">
+    <div class="aboutus-card">
+         <img src="{{ url_for('static', filename='images/Logo.png') }}" 
+                 alt="CJ Logo" class="Aboutus-image">
+        <h2>About Us</h2>
+        <p>Our start up business <strong>Critical Job</strong> consists of two members, <strong>Jack and Cody</strong>.
+            We are aspiring developers with a shared passion for learning through function and physical media.
+            <br><br>
+            We have been tasked with designing and creating a project that understands, utilizes and explains the
+            use of Cyber Security Systems. Our decision is to develop an <strong>intentionally vulnerable web application</strong>.
+            <br><br>
+            We share a strong interest in exploring how cyber security works, using software and tools to generate
+            an ideal environment for new students to learn — the same way we have.
+        </p>
+    </div>
+</div>
 {% endblock %}

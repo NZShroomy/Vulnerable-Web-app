@@ -11,7 +11,7 @@
 
         <!-- Account Summary -->
         <a href="{{ url_for('my_accounts') }}" class="card-link">
-            <div class="card">
+            <div class="acc-card">
                 <img src="{{ url_for('static', filename='images/vdop16-9.jpg') }}" 
                      alt="Account Summary" class="home-image">
                 <h3>Account Summary - Cheque</h3>
@@ -45,13 +45,15 @@
             <p>Stay updated with account alerts, updates, and security notices.</p>
         </div>
 
-        <!-- Coming Soon -->
-        <div class="card coming-soon">
-            <img src="{{ url_for('static', filename='images/Vault16-9.png') }}" 
-                 alt="Apply for Insurance" class="home-image">
-            <h3>Apply for Insurance</h3>
-            <p>Coming Soon — new insurance products will be available shortly.</p>
-        </div>
+        <!-- Insurance -->
+        <a href="{{ url_for('my_insurance') }}" class="card-link">
+            <div class="ins-card">
+                <img src="{{ url_for('static', filename='images/Vault16-9.png') }}" 
+                     alt="Insurance Card" class="home-image">
+                <h3>Apply for Insurance</h3>
+                <p>Combine your plans, for a premium that's practically pocket change!</p>
+            </div>
+        </a>
     </div>
   </div>
 {% endblock %}
