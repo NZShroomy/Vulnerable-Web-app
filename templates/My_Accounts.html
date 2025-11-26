@@ -3,61 +3,53 @@
 {% extends "Base.html" %}
 {% block title %}My_Accounts{% endblock %}
 <!-- main content change this per page-->
- {% block styles %}
-<link rel="stylesheet" href="{{ url_for('static', filename='accounts.css') }}">
-{% endblock %}
 
 {% block content %}
-
 <section class="accounts-container">
     <h1 class="acc-title">My Accounts</h1>
 
-    {% set placeholder = url_for('static', filename='images/pantera.jpg') %}
-
     <div class="accounts-grid">
-
         {% for acc in accounts %}
-        <div class="account-wrapper">
+        <div class="account-card">
 
-            <!-- CLICKABLE CARD -->
-            <div class="account-card dropdown-toggle" data-target="dropdown-{{ acc.id }}">
-                <div class="account-image" style="background-image: url('{{ placeholder }}')" aria-hidden="true"></div>
+            <!-- Dynamic image per account -->
+            <div class="account-image" 
+            style="background-image: url('{{ url_for('static', filename='images/' ~ (acc.image or 'Pantera.jpg')) }}');"></div>
+
+            <div class="account-info">
                 <div class="account-name">{{ acc.name }}</div>
-            </div>
+                <div class="account-balance">
+                    ${{ '%.2f'|format(acc.balance) }}
+                </div>
 
-            <!-- DROPDOWN SECTION -->
-            <div id="dropdown-{{ acc.id }}" class="account-dropdown hidden">
-                <p><strong>Balance:</strong> ${{ '%.2f'|format(acc.balance) }}</p>
-
-                <a href="{{ url_for('transfer_bp.transfer_funds_page', account_id=acc.id) }}" class="dropdown-btn">
+                <a class="acc-dropdown-btn" 
+                   href="{{ url_for('transfer_bp.transfer_funds_page', account_id=acc.id) }}">
                     Transfer Funds
                 </a>
             </div>
 
         </div>
         {% endfor %}
-
     </div>
 </section>
 {% endblock %}
+
 {% block scripts %}
 <script>
+// Ensure images display properly
 document.addEventListener("DOMContentLoaded", () => {
-    document.querySelectorAll(".dropdown-toggle").forEach(card => {
-        card.addEventListener("click", () => {
-            const targetId = card.getAttribute("data-target");
-            const dropdown = document.getElementById(targetId);
-
-            // Close any other open dropdowns (optional)
-            document.querySelectorAll(".account-dropdown").forEach(d => {
-                if (d !== dropdown) d.classList.add("hidden");
-            });
-
-            // Toggle this one
-            dropdown.classList.toggle("hidden");
-        });
+    document.querySelectorAll('.account-image').forEach(div => {
+        // Only set styles if not already set via inline
+        if (!div.style.backgroundImage) {
+            const img = div.dataset.image;
+            if (img) {
+                div.style.backgroundImage = `url('${img}')`;
+            }
+        }
+        div.style.backgroundSize = "cover";
+        div.style.backgroundPosition = "center";
+        div.style.backgroundRepeat = "no-repeat";
     });
 });
 </script>
 {% endblock %}
-

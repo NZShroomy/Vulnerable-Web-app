@@ -31,11 +31,11 @@ def about():
 @app.route('/my_accounts')
 def my_accounts():
     accounts = [
-        {"id": 1, "name": "Everyday Account", "balance": 3095.41},
-        {"id": 2, "name": "Savings Account", "balance": 8200.45},
-        {"id": 3, "name": "Holiday Fund", "balance": 1250.00},
-        {"id": 4, "name": "Investments", "balance": 23000.87},
-        {"id": 5, "name": "Emergency Account", "balance": 600.00},
+        {"id": 1, "name": "Everyday Account", "balance": 3095.41, "image": "Life.jpeg"},
+        {"id": 2, "name": "Savings Account", "balance": 8200.45, "image": "Savings.jpeg"},
+        {"id": 3, "name": "Holiday Fund", "balance": 1250.00, "image": "Holiday.jpeg"},
+        {"id": 4, "name": "Investments", "balance": 23000.87, "image": "Investments.jpeg"},
+        {"id": 5, "name": "Emergency Account", "balance": 600.00, "image": "Emergency.jpeg"},
     ]
     return render_template('My_Accounts.html', accounts=accounts)
 
