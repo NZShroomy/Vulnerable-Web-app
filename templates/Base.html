@@ -51,14 +51,14 @@
   {% include "components/attack_buttons.html" %}
   {% include "components/attack_overlay.html" %}
   <script src="{{ url_for('static', filename='attackbutton.js') }}"></script>
-  <link rel="stylesheet" href="{{ url_for('static', filename='attackbutton.css') }}">
+  
 
   <!-- Tutorial Button -->
   {% include "components/tutorialbutton.html" %}
   <script src="{{ url_for('static', filename='tutorialbutton.js') }}"></script>
-  <link rel="stylesheet" href="{{ url_for('static', filename='tutorialbutton.css') }}">
 
-  <!-- Persistent settings (dark mode, font size, etc.) -->
+
+
   <script>
   document.addEventListener("DOMContentLoaded", () => {
       // Dark mode
@@ -68,7 +68,6 @@
           document.body.classList.remove('dark-mode');
       }
 
-      // Example: font size (optional)
       const savedFont = localStorage.getItem('fontSize');
       if (savedFont) document.body.style.fontSize = savedFont + 'px';
   });
