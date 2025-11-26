@@ -1,4 +1,3 @@
-// tutorialbutton.js
 document.addEventListener("DOMContentLoaded", () => {
 
     const fab = document.getElementById("tutorialFab");
@@ -12,19 +11,21 @@ document.addEventListener("DOMContentLoaded", () => {
     const prevBtn = document.getElementById("tutPrev");
     const acceptBtn = document.getElementById("tutAccept");
 
+    // Sidebar Tutorials link opens the modal
+    const sidebarLink = document.getElementById("sidebarTutorials");
+
     let currentPage = 0;
 
     // Helper: show a page
     function showPage(index) {
         pages.forEach((p, i) => p.classList.toggle("active", i === index));
 
-        // Show/hide navigation buttons
         prevBtn.style.display = index === 0 ? "none" : "inline-flex";
         nextBtn.style.display = index === pages.length - 1 ? "none" : "inline-flex";
         acceptBtn.style.display = index === pages.length - 1 ? "inline-flex" : "none";
     }
 
-    // Open modal
+    // Open modal from floating button
     toggle.addEventListener("click", (e) => {
         e.stopPropagation();
         modal.classList.add("show");
@@ -32,6 +33,17 @@ document.addEventListener("DOMContentLoaded", () => {
         currentPage = 0;
         showPage(currentPage);
     });
+
+    // Open modal from sidebar link
+    if (sidebarLink) {
+        sidebarLink.addEventListener("click", (e) => {
+            e.preventDefault(); // prevent navigation
+            modal.classList.add("show");
+            modal.setAttribute("aria-hidden", "false");
+            currentPage = 0;
+            showPage(currentPage);
+        });
+    }
 
     // Close modal
     closeBtn.addEventListener("click", () => {
@@ -47,7 +59,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
-    // Navigation
+    // Navigation buttons
     nextBtn.addEventListener("click", () => {
         if (currentPage < pages.length - 1) {
             currentPage++;
@@ -62,10 +74,28 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
-    // Accept
+    // Accept button
     acceptBtn.addEventListener("click", () => {
         modal.classList.remove("show");
         modal.setAttribute("aria-hidden", "true");
+    });
+
+    // Open modal from attack cards
+    document.querySelectorAll(".attack-card").forEach(card => {
+        card.addEventListener("click", () => {
+            const targetId = card.getAttribute("data-target"); // e.g., "tutPageSQL"
+            const targetPage = Array.from(pages).find(p => p.id === targetId);
+
+            if (targetPage) {
+                pages.forEach(p => p.classList.remove("active"));
+                targetPage.classList.add("active");
+                modal.classList.add("show");
+                modal.setAttribute("aria-hidden", "false");
+
+                currentPage = Array.from(pages).indexOf(targetPage);
+                showPage(currentPage);
+            }
+        });
     });
 
 });
