@@ -41,9 +41,9 @@ document.addEventListener("DOMContentLoaded", () => {
     auth: {
       title: "Broken User Authentication",
       subtitle: "Flaws in login and session handling",
-      execute: "Example: predictable session IDs, weak passwords.",
-      consequences: "Account takeover, identity theft.",
-      prevention: "Strong sessions, hashing, multi-factor auth."
+      execute: "For this vulnerability, attackers exploit weaknesses in the authentication process.<br> In this application we have no session management and no password policies or hashing so the password is stored in plain text.<br> An attacker could easily guess or brute-force passwords to gain unauthorized access.<br> ",
+      consequences: "The consequences of broken authentication include unauthorized access to user accounts, data breaches, and potential full system compromise.",
+      prevention: " Some methods for minimising Broken user Authentication include Strong sessions, hashing, multi-factor auth, Enforcing a strong password policy."
     },
 
     xss: {

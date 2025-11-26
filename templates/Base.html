@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>{% block title %}{% endblock %}</title>
@@ -8,17 +9,23 @@
   <link rel="stylesheet" href="{{ url_for('static', filename='tutorialbutton.css') }}">
   <link rel="stylesheet" href="{{ url_for('static', filename='attackoverlay.css') }}">
 </head>
+
 <body>
   <div class="layout-grid">
     <header>
       {% block header %}
-      <div class ="header-title">
+      <div class="header-title">
         <h1><a href="{{ url_for('homepage') }}">Critical Job Bank </a></h1>
       </div>
 
       <div class="header-account">
-        <div class="header-account-link">Kia Ora, Mr Person</div>
-
+        <div class="header-account-link">
+          {% if current_user %}
+          Kia Ora, {{ current_user }}
+          {% else %}
+          Kia Ora, Guest
+          {% endif %}
+        </div>
         <div class="header-dropdown">
           <a href="{{ url_for('settings') }}">⚙ Settings</a>
           <a href="{{ url_for('splash') }}">꩜ Logout</a>
@@ -51,7 +58,7 @@
   {% include "components/attack_buttons.html" %}
   {% include "components/attack_overlay.html" %}
   <script src="{{ url_for('static', filename='attackbutton.js') }}"></script>
-  
+
 
   <!-- Tutorial Button -->
   {% include "components/tutorialbutton.html" %}
@@ -60,17 +67,18 @@
 
 
   <script>
-  document.addEventListener("DOMContentLoaded", () => {
+    document.addEventListener("DOMContentLoaded", () => {
       // Dark mode
       if (localStorage.getItem('darkMode') === 'true') {
-          document.body.classList.add('dark-mode');
+        document.body.classList.add('dark-mode');
       } else {
-          document.body.classList.remove('dark-mode');
+        document.body.classList.remove('dark-mode');
       }
 
       const savedFont = localStorage.getItem('fontSize');
       if (savedFont) document.body.style.fontSize = savedFont + 'px';
-  });
+    });
   </script>
 </body>
+
 </html>
