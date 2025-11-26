@@ -35,6 +35,57 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 </script>
 
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    const fromAccountSelect = document.getElementById('fromAccount');
+    const toAccountSelect = document.getElementById('toAccount');
+    const balanceInput = document.getElementById('availableBalance');
+    const transferAmountInput = document.getElementById('transferAmount');
+    const confirmBtn = document.querySelector('.confirm-btn');
+
+    // Update balance when switching FROM account
+    fromAccountSelect.addEventListener('change', () => {
+        const selected = fromAccountSelect.value;
+        balanceInput.value = accountData[selected] !== undefined 
+            ? "$" + accountData[selected].toLocaleString()
+            : "";
+    });
+
+    // Confirm transfer logic
+    confirmBtn.addEventListener("click", () => {
+        const fromAccount = fromAccountSelect.value;
+        const toAccount = toAccountSelect.value;
+        const amount = parseFloat(transferAmountInput.value);
+
+        if (!fromAccount || !toAccount || isNaN(amount) || amount <= 0) {
+            alert("Please enter a valid transfer.");
+            return;
+        }
+
+        if (fromAccount === toAccount) {
+            alert("You cannot transfer to the same account.");
+            return;
+        }
+
+        if (accountData[fromAccount] < amount) {
+            alert("Insufficient funds.");
+            return;
+        }
+
+        // Apply transfer
+        accountData[fromAccount] -= amount;
+        accountData[toAccount] += amount;
+
+        // Update displayed balance
+        balanceInput.value = "$" + accountData[fromAccount].toLocaleString();
+
+        alert(`Transfer successful!\n\n$${amount.toLocaleString()} moved from ${fromAccount} to ${toAccount}.`);
+    });
+
+});
+</script>
+
 <div class="transfer-container">
 
     <h1 class="transfer-title">Transfer Funds</h1>
@@ -65,20 +116,20 @@ document.addEventListener("DOMContentLoaded", function () {
         </div>
 
         <!-- RIGHT COLUMN -->
-        <div class="transfer-column">
+         <div class="transfer-column">
             <h2>To Account</h2>
-
+            
             <label>Select Account</label>
-            <select>
+            <select id="toAccount">
                 <option>Everyday Account</option>
                 <option>Savings Account</option>
                 <option>Holiday Fund</option>
                 <option>Investments</option>
                 <option>Emergency Account</option>
             </select>
-
+            
             <label>Transfer Amount</label>
-            <input type="number" placeholder="Enter amount">
+            <input id="transferAmount" type="number" placeholder="Enter amount">
         </div>
 
     </div>
