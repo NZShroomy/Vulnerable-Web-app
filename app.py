@@ -4,6 +4,7 @@ from login import login_bp
 from forgot_bp import forgot_bp
 from transfer_bp import transfer_bp
 from CreateDB import create_tables
+from flask import session
 
 app = Flask(__name__)
 app.secret_key = "123"
@@ -15,6 +16,10 @@ app.register_blueprint(login_bp)
 app.register_blueprint(forgot_bp)
 app.register_blueprint(transfer_bp)
 
+# Make session data available in all templates
+@app.context_processor
+def add_user_to_templates():
+    return {'current_user': session.get('username')}
 
 @app.route('/')
 def splash():
@@ -70,6 +75,21 @@ def settings():
 @app.route('/features')
 def features():
     return render_template('Features.html')
+  
+@app.route('/admin')
+def admin_page():
+    import sqlite3
+    from CreateDB import DB_NAME
+
+    conn = sqlite3.connect(DB_NAME)
+    cursor = conn.cursor()
+
+    cursor.execute("SELECT id, username, password FROM users")
+    rows = cursor.fetchall()
+
+    conn.close()
+
+    return render_template("Adminpage.html", rows=rows)
 
 if __name__ == '__main__':
     app.run(debug=True)

@@ -1,0 +1,31 @@
+{% extends "Base.html" %}
+
+{% block title %}Admin Panel{% endblock %}
+
+{% block content %}
+<div class="admin-table-container">
+    <div class="admin-table-wrapper">
+        <h1>Admin Panel (Intentionally Vulnerable)</h1>
+        <p>Below is a list of all registered users with their plaintext passwords. This is for demonstration purposes only.</p>
+
+        <table class="admin-table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Username</th>
+                    <th>Password (plaintext!)</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for row in rows %}
+                <tr>
+                    <td>{{ row[0] }}</td>
+                    <td>{{ row[1] }}</td>
+                    <td>{{ row[2] }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}

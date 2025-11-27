@@ -1,7 +1,6 @@
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    /*background: url("/static/images/FutureBankGreen.png"); temporarily for visbility*/
     background: #696969;
     background-size: cover;
     color: white;
@@ -104,7 +103,7 @@ header.dark-mode {
 .header-account {
     position: relative;
     display: inline-block;
-    margin-left: auto; /* stays on the right */
+    margin-left: auto; 
 }
 
 /* Dropdown panel */
@@ -181,10 +180,10 @@ header.dark-mode {
 /* MAIN CONTENT AREA */
 main {
     grid-area: main;
-    display: block; /* not grid, just a container */
+    display: block; 
     text-align: center;
     padding: 20px;
-    overflow-y: auto;    /* main content scroll */
+    overflow-y: visible;    
     height: auto; /* lets page grow */
 
 }
@@ -222,7 +221,7 @@ main {
 .account-image {
     display: block;
     width: 100%;
-    height: 150px;                 /* REQUIRED */
+    height: 150px;                
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -590,7 +589,7 @@ main {
     font-size: 2.2rem;
     margin: 20px 0 15px; /* small gap below title */
     font-weight: 700;
-    color: #003d29; /* optional: match your color scheme */
+    color: #003d29;
 }
 
 /* ---------- Attack Grid ---------- */
@@ -702,7 +701,7 @@ color: #333;
     font-size: 2.2rem;
     margin: 20px 0 15px; /* small gap below title */
     font-weight: 700;
-    color: #003d29; /* optional: match your color scheme */
+    color: #003d29;
 }
 
 .settings-list {
@@ -767,3 +766,47 @@ color: #333;
 .features-button:hover {
     background: #0a7d55;
 }
+/* Center tables and style them nicely */
+.admin-table-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.admin-table-wrapper {
+    width: 80%;
+    max-width: 800px;
+}
+
+.admin-table-wrapper h1,
+.admin-table-wrapper p {
+    text-align: center;
+}
+
+.admin-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+    margin-top: 10px;
+    font-size: 0.95rem;
+}
+
+.admin-table th,
+.admin-table td {
+    padding: 10px 12px;
+    border: 1px solid #ccc;
+}
+
+.admin-table th {
+    background-color: #f3f3f3;
+    font-weight: 600;
+}
+
+.admin-table tr:nth-child(even) {
+    background-color: #fafafa;
+}
+
+.admin-table tr:hover {
+    background-color: #f1f5f9;
+}
+
