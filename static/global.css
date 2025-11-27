@@ -545,6 +545,7 @@ main {
     padding: 20px;
     border-radius: 12px;
     box-shadow: 0px 2px 6px rgba(0,0,0,0.12);
+    
 }
 
 .transfer-column h2 {
@@ -556,11 +557,12 @@ main {
     display: block;
     margin-top: 10px;
     font-weight: bold;
+    
 }
 
 .transfer-column input,
 .transfer-column select {
-    width: 100%;
+    width: 80%;
     padding: 10px;
     margin-top: 5px;
     border-radius: 8px;
@@ -761,7 +763,7 @@ color: #333;
     background: #0a5c40;
     border-radius: 8px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-    padding-bottom: 40px;          /* optional, adds breathing room */
+    padding-bottom: 40px;         
 }
 
 .features-video {
@@ -790,7 +792,7 @@ color: #333;
 .features-button:hover {
     background: #0a7d55;
 }
-/* Center tables and style them nicely */
+/* Center tables and style */
 .admin-table-container {
     display: flex;
     justify-content: center;
