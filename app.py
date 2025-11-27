@@ -72,6 +72,10 @@ def help():
 def settings():
     return render_template('Settings.html')
 
+@app.route('/features')
+def features():
+    return render_template('Features.html')
+  
 @app.route('/admin')
 def admin_page():
     import sqlite3
