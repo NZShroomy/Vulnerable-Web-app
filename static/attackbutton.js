@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
     sqli: {
       title: "SQL Injection",
       subtitle: "Inserting malicious SQL into database queries",
-      execute: "SQL injection is performed by manipulating input fields to include SQL commands that the database will execute.<br><br>Example: <code>' OR '1'='1';--</code> to bypass login and anything in the password field.",
+      execute: "SQL injection is performed by manipulating input fields to include SQL commands that the database will execute. Please go to the <a href=\"/login\">login page</a><br><br> Then enter <code>' OR '1'='1';--</code> into the username field and anything in the password field to bypass login.",
       consequences: "A malicious user could dump the entire database which would cause downtimes or at worst loss of all data.<br> Modify or delete data which could lead to fraud and <br>Bypass authentication",
       prevention: "Use prepared statements<br> Never build queries by concatenating strings <br>Validate all inputs only allowing certain characters where possible and implemneting length restrictions.<br><br> In our application we use a directly concatenated query which is vulnerable to SQLi instead of using prepared statments.<br><br> Example of vulnerable code:<br><code>query = f\"SELECT * FROM users WHERE username = '\" + username + \"' AND password = '\" + password + \"'\"</code><br><br> Example of secure code:<br><code>query = \"SELECT * FROM users WHERE username = ? AND password = ?\"<br>cursor.execute(query, (username, password))</code>"
     },
