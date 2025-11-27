@@ -1,0 +1,15 @@
+{% extends "Base.html" %} {% block title %}Attacks{% endblock %} {% block content %}
+<hr>
+<h3>Reviews:</h3> {% for r in reviews %} <p>{{ r | safe }}</p> {% endfor %} <form action="/reviews" method="POST">
+    <textarea name="review" placeholder="appis10/10" required></textarea>
+    <br>
+     <button type="submit">Submit</button>
+</form> 
+
+<!-- Clear Reviews Button -->
+<form action="/reviews/clear" method="POST" style="margin-top:1rem;">
+    <button type="submit">Clear Reviews</button>
+</form>
+
+{% endblock %}
+
