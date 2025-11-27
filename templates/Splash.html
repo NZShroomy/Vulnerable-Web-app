@@ -5,24 +5,10 @@
 {% block header %}
 <!-- Optional: a simpler or empty header for splash -->
 <div class="header-title">
-    <h1>Welcome to Critical Job Bank</h1>
-</div>
+        <h1><a href="{{ url_for('splash') }}">Critical Job Bank </a></h1>
+      </div>
+          <a href="{{ url_for('login_bp.login') }}">꩜ Login</a>    
 {% endblock %}
-
-{% block sidebar %}
-<!-- Optional: empty sidebar or minimal links -->
-<ul>
-    <li><a href="#features">Features</a></li>
-    <li><a href="https://owasp.org/www-project-top-ten/" target="_blank">OWASP Top Ten</a></li>
-    <li><a href="#offers">What This App Offers</a></li>
-    <li><a href="#dev">Secure Development Practices</a></li>
-    <li><a href="#contact">Contact Us</a></li>
-    <li><a href="#about us">About Us</a></li>
-    <li><a href="#help">Help</a></li>
-    <li><a href="https://github.com/NZShroomy/Vulnerable-Web-app" target="_blank">GitHub Repo</a></li>
-</ul>
-{% endblock %}
-
 {% block content %}
 <div class="splash-container">
     <img src="{{ url_for('static', filename='images/VaultGreenNarrow.png') }}" class="splash-image">
