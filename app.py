@@ -67,5 +67,9 @@ def help():
 def settings():
     return render_template('Settings.html')
 
+@app.route('/features')
+def features():
+    return render_template('Features.html')
+
 if __name__ == '__main__':
     app.run(debug=True)

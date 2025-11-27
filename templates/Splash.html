@@ -12,9 +12,8 @@
 {% block sidebar %}
 <!-- Optional: empty sidebar or minimal links -->
 <ul>
-    <li><a href="#features">Features</a></li>
+    <li><a href="{{ url_for('features') }}">App Features</a></li>
     <li><a href="https://owasp.org/www-project-top-ten/" target="_blank">OWASP Top Ten</a></li>
-    <li><a href="#offers">What This App Offers</a></li>
     <li><a href="#dev">Secure Development Practices</a></li>
     <li><a href="#contact">Contact Us</a></li>
     <li><a href="#about us">About Us</a></li>
@@ -25,9 +24,13 @@
 
 {% block content %}
 <div class="splash-container">
-    <img src="{{ url_for('static', filename='images/VaultGreenNarrow.png') }}" class="splash-image">
-    <h1 class="splash-title">꩜ tena koe, nau mai haere mai. Nau mai ki te whare taonga.</h1>
-    <h1 class="splash-title2">꩜ Hello, we welcome you to the Vault!</h1>
+    <h1 class="splash-title">tena koe, nau mai haere mai. Nau mai ki te whare taonga.</h1>
+    <h1 class="splash-title2">꩜ ꩜ ꩜ ꩜ ꩜ ꩜ ꩜ ꩜</h1>
+    <h1 class="splash-title2">Hello, we welcome you to the Vault!</h1>
+    <video class="features-video" height="250" width=auto autoplay muted loop playsinline>
+        <source src="{{ url_for('static', filename='videos/vault.mp4') }}" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
     <a href="{{ url_for('login_bp.login') }}" class="splash-button">Let's Get Started!</a>
 </div>
 {% endblock %}

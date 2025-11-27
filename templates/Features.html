@@ -1,0 +1,53 @@
+<!-- Jinja2 for resusability-->
+{% extends "Base.html" %}
+{% block title %}Features{% endblock %}
+<!-- main content change this per page-->
+{% block header %}
+<div class ="header-title">
+    <h1>Welcome to Critical Job Bank</h1>
+</div>
+{% endblock %}
+
+{% block sidebar %}
+<!-- Optional: empty sidebar or minimal links -->
+<ul>
+    <li><a href="{{ url_for('features') }}">App Features</a></li>
+    <li><a href="https://owasp.org/www-project-top-ten/" target="_blank">OWASP Top Ten</a></li>
+    <li><a href="#dev">Secure Development Practices</a></li>
+    <li><a href="#contact">Contact Us</a></li>
+    <li><a href="#about us">About Us</a></li>
+    <li><a href="#help">Help</a></li>
+    <li><a href="https://github.com/NZShroomy/Vulnerable-Web-app" target="_blank">GitHub Repo</a></li>
+    <li><br></li>
+    <li><br></li>
+    <li><br></li>
+    <li><br></li>
+    <li><br></li>
+    <li><br></li>
+    <li><br></li>
+    <li><br></li>
+    <li><br></li>
+    <li><a href="{{ url_for('splash') }}">⟵ Back</a></li>
+</ul>
+{% endblock %}
+
+{% block content %}
+<div class="features-container">
+    <h1 class="features-title">App Features</h1>
+    <p>This application, is designed to LOOK like a banking application, <br>
+        but FUNCTIONS as an educational device, <br>
+        to understand how system weaknesses and hacks work. 
+        <br> <br>
+        Designed to accomodate a wide range of skill levels, <br>
+        from Novice to educator, to current developers and techs alike. <br>
+        Not only do we want to give visual aid to "seeing behind the hack", <br>
+        we show the type of code, tools, and systems used, <br>
+        we show the implications for potential victims, <br>AND want to strongly enforce the illegality of committing these attacks/hacks. 
+    </p>
+    <video class="features-video" height="250" width=auto autoplay muted loop playsinline>
+        <source src="{{ url_for('static', filename='videos/hack.mp4') }}" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <a href="{{ url_for('login_bp.login') }}" class="features-button">Let's Get Started!</a>
+</div>
+{% endblock %}

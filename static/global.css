@@ -37,6 +37,10 @@ header {
     border-bottom: 0;
     color: white;
     box-sizing: border-box;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
     
     /* soft glow effect like polished stone */
     box-shadow: 0 2px 12px rgba(0, 100, 60, 0.6);
@@ -143,8 +147,13 @@ header.dark-mode {
     background: #222;
     padding-top: 20px;
     border-right: 2px solid #333;
-    height: calc(100vh);
+    height: calc(100vh - 70px);
     overflow: auto;
+    position: fixed;
+    top: 70px;
+    left: 0;
+    overflow-y: auto;
+
 }
 
 .sidebar.dark-mode { 
@@ -175,8 +184,9 @@ main {
     display: block; /* not grid, just a container */
     text-align: center;
     padding: 20px;
-    overflow-y: visible;    /* remove scrolling on main */
+    overflow-y: auto;    /* main content scroll */
     height: auto; /* lets page grow */
+
 }
 
 .accounts-container {
@@ -716,4 +726,44 @@ color: #333;
 
 .settings-item .text {
     flex-grow: 1;
+}
+
+.features-container {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    text-align: center;
+    background: #0a5c40;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    padding-bottom: 40px;          /* optional, adds breathing room */
+}
+
+.features-video {
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.features-title {
+    font-size: 2.5rem;
+    color: #94f5c7;  /* jade tone */
+    margin-bottom: 10px;
+}
+
+.features-button {
+    padding: 12px 30px;
+    background: #003d29;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    transition: 0.3s;
+}
+
+.features-button:hover {
+    background: #0a7d55;
 }
