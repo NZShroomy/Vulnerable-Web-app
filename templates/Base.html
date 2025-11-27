@@ -15,7 +15,11 @@
     <header>
       {% block header %}
       <div class="header-title">
+        {% if current_user %}
         <h1><a href="{{ url_for('homepage') }}">Critical Job Bank </a></h1>
+        {% else %}
+        <h1><a href="{{ url_for('splash') }}">Critical Job Bank </a></h1>
+        {% endif %}
       </div>
 
       <div class="header-account">
@@ -53,7 +57,7 @@
 
         {% else %}
             <!-- PUBLIC (NOT LOGGED IN) SIDEBAR -->
-            <li><a href="#features">Features</a></li>
+            <li><a href="{{ url_for('features') }}">Features</a></li>
             <li><a href="https://owasp.org/www-project-top-ten/" target="_blank">OWASP Top Ten</a></li>
             <li><a href="#offers">What This App Offers</a></li>
             <li><a href="#dev">Secure Development Practices</a></li>

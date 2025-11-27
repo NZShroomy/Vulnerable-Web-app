@@ -2,35 +2,6 @@
 {% extends "Base.html" %}
 {% block title %}Features{% endblock %}
 <!-- main content change this per page-->
-{% block header %}
-<div class ="header-title">
-    <h1>Welcome to Critical Job Bank</h1>
-</div>
-{% endblock %}
-
-{% block sidebar %}
-<!-- Optional: empty sidebar or minimal links -->
-<ul>
-    <li><a href="{{ url_for('features') }}">App Features</a></li>
-    <li><a href="https://owasp.org/www-project-top-ten/" target="_blank">OWASP Top Ten</a></li>
-    <li><a href="#dev">Secure Development Practices</a></li>
-    <li><a href="#contact">Contact Us</a></li>
-    <li><a href="#about us">About Us</a></li>
-    <li><a href="#help">Help</a></li>
-    <li><a href="https://github.com/NZShroomy/Vulnerable-Web-app" target="_blank">GitHub Repo</a></li>
-    <li><br></li>
-    <li><br></li>
-    <li><br></li>
-    <li><br></li>
-    <li><br></li>
-    <li><br></li>
-    <li><br></li>
-    <li><br></li>
-    <li><br></li>
-    <li><a href="{{ url_for('splash') }}">⟵ Back</a></li>
-</ul>
-{% endblock %}
-
 {% block content %}
 <div class="features-container">
     <h1 class="features-title">App Features</h1>
