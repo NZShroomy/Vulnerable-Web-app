@@ -72,6 +72,20 @@ def help():
 def settings():
     return render_template('Settings.html')
 
+@app.route('/admin')
+def admin_page():
+    import sqlite3
+    from CreateDB import DB_NAME
+
+    conn = sqlite3.connect(DB_NAME)
+    cursor = conn.cursor()
+
+    cursor.execute("SELECT id, username, password FROM users")
+    rows = cursor.fetchall()
+
+    conn.close()
+
+    return render_template("Adminpage.html", rows=rows)
 
 if __name__ == '__main__':
     app.run(debug=True)

@@ -21,29 +21,17 @@ document.addEventListener("DOMContentLoaded", () => {
     sqli: {
       title: "SQL Injection",
       subtitle: "Inserting malicious SQL into database queries",
-      execute: `
-                SQL injection is performed by manipulating input fields
-                to include SQL commands that the database will execute.<br><br>
-                Example: <code>' OR '1'='1';--</code> to bypass login.
-            `,
-      consequences: `
-                • Dump the entire database<br>
-                • Modify or delete data<br>
-                • Bypass authentication
-            `,
-      prevention: `
-                • Use prepared statements<br>
-                • Never concatenate SQL strings<br>
-                • Validate all inputs
-            `
+      execute: "SQL injection is performed by manipulating input fields to include SQL commands that the database will execute.<br><br>Example: <code>' OR '1'='1';--</code> to bypass login and anything in the password field.",
+      consequences: "Dump the entire database<br> Modify or delete data<br>Bypass authentication",
+      prevention: "Use prepared statements<br> Never concatenate SQL strings<br>Validate all inputs"
     },
-
+         
     auth: {
       title: "Broken User Authentication",
       subtitle: "Flaws in login and session handling",
-      execute: "For this vulnerability, attackers exploit weaknesses in the authentication process.<br> In this application we have no session management and no password policies or hashing so the password is stored in plain text.<br> An attacker could easily guess or brute-force passwords to gain unauthorized access.<br> ",
-      consequences: "The consequences of broken authentication include unauthorized access to user accounts, data breaches, and potential full system compromise.",
-      prevention: " Some methods for minimising Broken user Authentication include Strong sessions, hashing, multi-factor auth, Enforcing a strong password policy."
+      execute: "For this vulnerability, attackers exploit weaknesses in the authentication process.<br> In this application we have no password policies so passwords can be any length and insecure. <br> This allows brute force attacks to be more effective.",
+      consequences: "The consequences of broken authentication include unauthorized access to user accounts, data breaches, and a potential full system compromise.",
+      prevention: "To minimize broken authentication, implement strong session management via cookies, enforce multi-factor authentication, and require strong password policies."
     },
 
     xss: {
