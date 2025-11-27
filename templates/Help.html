@@ -9,23 +9,23 @@
 <div class="mycards-container">
     <h2 class="mycards-title">Frequently Asked Questions</h2>
     <div class="mycards-grid">
-        <div class="info-card">
-            <div class="info-text">
+        <div class="help-card">
+            <div class="help-text">
                 <h3>How do I reset my password?</h3>
-                <p>You can reset your password by clicking the 'Forgot Password' link on the login page.</p>
+                <p>You can reset your password by clicking the 'Forgot Password' link on the login page or the link provided <a href="{{ url_for('forgot_bp.forgot_password') }}">here</a>.</p>
             </div>
         </div>
-        <div class="info-card">
-            <div class="info-text">
+        <div class="help-card">
+            <div class="help-text">
                 <h3>How do I transfer funds?</h3>
                 <p>Go to the 'Transfer Funds' section from the sidebar and follow the instructions.</p>
             </div>
         </div>
-        <div class="info-card">
-            <div class="info-text">
+        <div class="help-card">
+            <div class="help-text">
                 <h3>Can I provide feedback?</h3>
-                <p>Yes! Click the button below to fill in our feedback form.</p>
-                <a href="#" class="card-link"><button class="splash-button">Give Feedback</button></a>
+                <p>Yes! Click the button below to fill in our reviews form.</p>
+                <a href="{{ url_for('reviews') }}" class="card-link"><button class="splash-button">Give Feedback</button></a>
             </div>
         </div>
     </div>

@@ -25,7 +25,7 @@ def login():
             session['session_id'] = 12345                 
             session['auth_level'] = user[0]               
             flash("Login successful", "success")
-            return redirect(url_for('homepage')) #no login state kept
+            return redirect(url_for('homepage')) 
         else:
             flash("Invald user credentials", "error")
             return redirect(url_for('login_bp.login'))
