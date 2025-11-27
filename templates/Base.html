@@ -14,19 +14,28 @@
   <div class="layout-grid">
     <header>
       {% block header %}
-      <div class="header-title">
-        {% if current_user %}
-        <h1><a href="{{ url_for('homepage') }}">Critical Job Bank </a></h1>
-        {% else %}
-        <h1><a href="{{ url_for('splash') }}">Critical Job Bank </a></h1>
-        {% endif %}
+      <div class="header-left">
+        <div class="header-title">
+          {% if current_user %}
+          <h1><a href="{{ url_for('homepage') }}">Critical Job Bank </a></h1>
+          {% else %}
+          <h1><a href="{{ url_for('splash') }}">Critical Job Bank </a></h1>
+          {% endif %}
+        </div>
       </div>
-
+      
+      <div class="header-center">
+        <div class="edu-banner">
+          <strong>This application is for educational use only. Please exercise ethical behaviour at all times.</strong>
+        </div>
+      </div>
+      
       <div class="header-account">
         <div class="header-account-link">
           {% if current_user %}
           Kia Ora, {{ current_user }}
         </div>
+        
         <div class="header-dropdown">
           <a href="{{ url_for('settings') }}">⚙ Settings</a>
           <a href="{{ url_for('login_bp.logout') }}">꩜ Logout</a>
@@ -37,6 +46,8 @@
       </div>
       {% endblock %}
     </header>
+
+    
 
     <nav class="sidebar">
       {% block sidebar %}
