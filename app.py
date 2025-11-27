@@ -8,6 +8,7 @@ from flask import session
 
 app = Flask(__name__)
 app.secret_key = "123"
+reviews_data = []
 
 create_tables() # Ensure the database tables are created
 
@@ -75,6 +76,21 @@ def settings():
 @app.route('/features')
 def features():
     return render_template('Features.html')
+
+@app.route('/reviews', methods=['GET', 'POST'])
+def reviews():
+    if request.method == 'POST':
+        review = request.form['review']
+        username = session.get('username', 'Guest')
+        reviews_data.append(review)  
+        return redirect(url_for('reviews'))
+
+    return render_template('Reviews.html', reviews=reviews_data)
+
+@app.route('/reviews/clear', methods=['POST'])
+def clear_reviews():
+    reviews_data.clear()  # empties the list
+    return redirect(url_for('reviews'))
   
 @app.route('/admin')
 def admin_page():
