@@ -952,3 +952,10 @@ color: #333;
     border: none;
     cursor: pointer;
 }
+
+.label-text {
+    font-weight: bold;
+    margin-bottom: 6px;
+    display: block;
+    color: #000000;
+}
