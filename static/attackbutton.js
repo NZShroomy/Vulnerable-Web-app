@@ -55,7 +55,7 @@ document.addEventListener("DOMContentLoaded", () => {
       subtitle: "Poor protection of stored or transmitted data",
       execute: "In this application sensetive data is being exposed from the broken access control vulnerability.<br><br>Example: If an attacker gains access to another user's account, they can view sensitive information such as personal details and financial data. <br> in this case it is accessing an <a href=\"/admin\">admin page</a> without proper authorization to view sensitive data.",
       consequences: "Identity theft, system compromise. In this application sensitive data exposure could lead to identity theft and financial fraud if attackers access personal and financial information of users.<br><br> This could lead to a system compromise if admin credentials are exposed.",
-      prevention: "One method would be to implement strong access controls to ensure that only authorized users can access sensitive data. EG: Checking a users role if it does not match then they are given an error. <br><br> Ensuring the encryption of sensitive data both at rest and in transit would help protect it from unauthorized access for a real world application"
+      prevention: "One method would be to implement strong access controls to ensure that only authorized users can access sensitive data. EG: Checking a users role if it does not match then they are given an error. <br><br> Ensuring the encryption of sensitive data both at rest and in transit would help protect it from unauthorized access for a real world application<br><br> Ensure all senseitve data is hashed before storing in the database using strong hashing algorithms like bcrypt or Argon2."
     }
   };
 

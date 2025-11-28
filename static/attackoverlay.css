@@ -22,8 +22,8 @@
     background: #222;
     padding: 2rem;
     border-radius: 1rem;
-    max-width: 450px;
-    width: 90%;
+    max-width: 800px;
+    width: 100%;
     text-align: center;
     position: relative;
 }
@@ -61,7 +61,7 @@
     font-weight: normal;
 }
 
-#attack-overlay p {
+.attack-overlay p {
     color: #ffffff;
     line-height: 1.4;
     margin-bottom: 1rem;
