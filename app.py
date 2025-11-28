@@ -6,12 +6,21 @@ from transfer_bp import transfer_bp
 from CreateDB import create_tables
 from flask import session
 
+
 app = Flask(__name__)
+app.config['SESSION_PERMANENT'] = False # Session will expire when the browser is closed
 app.secret_key = "123"
 reviews_data = []
 
+# Example review
+reviews_data.append({
+    "user": "ExampleUser",
+    "text": "This is an example review to show how it looks!"
+})
+
 create_tables() # Ensure the database tables are created
 
+# Register blueprints
 app.register_blueprint(signup_bp)
 app.register_blueprint(login_bp)
 app.register_blueprint(forgot_bp)
@@ -81,8 +90,9 @@ def features():
 def reviews():
     if request.method == 'POST':
         review = request.form['review']
-        username = session.get('username', 'Guest')
-        reviews_data.append(review)  
+        username = session.get('username' , 'Guest')
+        review = review.replace('\r\n', '\n').strip()
+        reviews_data.append({"user": username, "text": review})  
         return redirect(url_for('reviews'))
 
     return render_template('Reviews.html', reviews=reviews_data)

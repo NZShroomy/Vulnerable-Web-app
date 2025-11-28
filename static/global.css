@@ -854,3 +854,97 @@ color: #333;
     color: white;
     text-align: center;
 }
+
+.review-card {
+    background: #003d29;
+    border-radius: 12px;
+    padding: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    margin-bottom: 20px;
+    color: white;
+    text-align: left;
+    width: 500px;
+    display: block;
+}
+
+.reviews-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.reviews-header {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2rem;
+    color: #fdfdfd;
+    text-shadow: 1px 1px 2px #000000;
+}
+
+.comment-box {
+    background: #ffffff20; 
+    padding: 8px 11px;
+    border-radius: 8px;
+    border: 1px solid #ffffff40;
+    color: white;
+    white-space: pre-wrap; 
+    max-width: 100%;
+    max-height: 120px;
+    display: flex;
+    overflow-y: auto;
+    overflow-x: hidden;
+
+}
+
+.review-username {
+    text-decoration: underline;
+    display: block;
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+}
+
+.comment-box p {
+    margin: 0;
+    padding: 0;
+    text-align: left;
+}
+
+.review-form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.clear_reviews_button {
+    margin-top: 15px;
+    padding: 10px 20px;
+    background: #ccc;
+    color: black;
+    border-radius: 8px;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+}
+
+.review_button {
+    margin-top: 15px;
+    padding: 10px 20px;
+    background: #006f45;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.review_input {
+    width: 500px;
+    max-width: 90%;
+    height: 100px;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+    resize: vertical;
+}
