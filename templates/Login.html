@@ -77,17 +77,14 @@
   <script src="{{ url_for('static', filename='tutorialbutton.js') }}"></script>
 
 <script>
-    // Check if URL has a "msg" parameter
-    const params = new URLSearchParams(window.location.search);
-    const msg = params.get('msg');
+     setTimeout(() => {
+        document.querySelectorAll('.flash').forEach(f => {
+            f.style.transition = "opacity 0.5s";
+            f.style.opacity = "0";
 
-    if (msg) {
-        alert(msg); // small popup
-        
-        setTimeout(() => {
-            window.location.href = window.location.pathname;
-        }, 2000); 
-    }
+            setTimeout(() => f.remove(), 500); 
+        });
+    }, 3000);
 </script>
 
 </body>
