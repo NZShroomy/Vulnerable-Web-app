@@ -1,15 +1,31 @@
 {% extends "Base.html" %} {% block title %}Attacks{% endblock %} {% block content %}
 <hr>
-<h3>Reviews:</h3> {% for r in reviews %} <p>{{ r | safe }}</p> {% endfor %} <form action="/reviews" method="POST">
-    <textarea name="review" placeholder="appis10/10" required></textarea>
-    <br>
-     <button type="submit">Submit</button>
-</form> 
+<div class="reviews-header">
+    <h3>Reviews:</h3>
+</div>
+<div class="reviews-list">
+    {% for r in reviews %}
+    <div class="review-card">
+        <!-- Username above the comment box -->
+        <strong class="review-username">{{ r.user }}</strong>
 
-<!-- Clear Reviews Button -->
-<form action="/reviews/clear" method="POST" style="margin-top:1rem;">
-    <button type="submit">Clear Reviews</button>
-</form>
+        <!-- Comment box -->
+        <div class="comment-box">
+            <p>{{ r.text.strip() | safe }}</p>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+<div class="review-form-container">
+    <!-- Submit form -->
+    <form action="{{ url_for('reviews') }}" method="POST" class="review-submit-form">
+        <textarea name="review" class="review_input" placeholder="Write your review here..." required></textarea>
+        <button type="submit" class="review_button">Submit</button>
+    </form>
 
+    <!-- Clear Reviews form -->
+    <form action="{{ url_for('clear_reviews') }}" method="POST" class="review-clear-form">
+        <button type="submit" class="clear_reviews_button">Delete All Reviews</button>
+    </form>
+</div>
 {% endblock %}
-
