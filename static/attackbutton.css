@@ -26,6 +26,7 @@
     
 }
 
+
 .fab.expanded .fab-menu {
     opacity: 1;
     transform: translateX(0) scale(1);
@@ -36,7 +37,7 @@
     width: 56px;
     height: 56px;
     border-radius: 50%;
-    background: #e74c3c;
+    background: #d7392f;
     color: #fff;
     border: none;
     cursor: pointer;
@@ -45,6 +46,11 @@
     align-items: center;
     justify-content: center;
     box-shadow: 0 6px 18px rgba(0,0,0,0.18);
+}
+
+.fab-main:hover {
+    background: #e74c3c;
+    opacity: 75%;
 }
 
 .fab-item {

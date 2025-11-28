@@ -1,16 +1,45 @@
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background: #696969;
-    background-size: cover;
+    background: linear-gradient(
+        160deg,
+        #0e4d37 0%,
+        #08382a 35%,
+        #b89c4f 75%,   /* soft gold */
+        #8a783a 100%   /* deeper gold */
+    );
+    background-attachment: fixed;
     color: white;
+    background-size: cover;
 }
 
 body.dark-mode {
-  background: #111;
-  color: #eee;
+    background: linear-gradient(
+        160deg,
+        #062a1f 0%,     /* deep muted green */
+        #031d16 35%,    /* darker pounamu green */
+        #6e6030 75%,    /* muted brass gold */
+        #3f361d 100%    /* deep antique gold / warm shadow */
+    );
+    color: #eee;
 }
 
+body.dark-mode .settings-card {
+    background: rgba(0,0,0,0.4);
+    border-color: rgba(255,255,255,0.05);
+}
+
+body.dark-mode .settings-title {
+    color: #b89c4f;
+}
+
+body.dark-mode .settings-icon svg {
+    color: #b89c4f; /* gold accent in dark mode */
+}
+
+body.dark-mode .settings-desc {
+    color: #aaa;
+}
 
 .layout-grid {
     display: grid;
@@ -67,7 +96,7 @@ header.dark-mode {
 }
 
 .header-title a:hover {
-    color: white;
+    color: #b89c4f;
     text-shadow: 0 0 10px black;
 }
 
@@ -159,8 +188,8 @@ header.dark-mode {
     font-size: 0.9rem;
     font-weight: 600;
     border-radius: 6px;
-    border-left: 3px solid #111;
-    border-bottom: 3px solid #111;
+    border-left: 3px solid #b89c4f;
+    border-bottom: 3px solid #b89c4f;
     pointer-events: auto;              
 }
 
@@ -169,14 +198,13 @@ header.dark-mode {
     width: 200px;
     background: #222;
     padding-top: 20px;
-    border-right: 2px solid #333;
+    box-shadow: 2px 0 15px rgba(148, 245, 199, 0.25);
     height: calc(100vh - 70px);
     overflow: auto;
     position: fixed;
     top: 70px;
     left: 0;
     overflow-y: auto;
-
 }
 
 .sidebar.dark-mode { 
@@ -269,6 +297,13 @@ main {
     font-size: 0.95rem;
 }
 
+.acc-title {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 40px;
+    color: #b89c4f;
+}
+
 /* Transfer button */
 .acc-dropdown-btn {
     margin-top: 12px;
@@ -310,13 +345,13 @@ main {
 /* Title */
 .splash-title {
     font-size: 2.5rem;
-    color: #94f5c7;  /* jade tone */
+    color: #b89c4f;  /* jade tone */
     margin-bottom: 10px;
 }
 
 .splash-title2 {
     font-size: 2rem;
-    color: #94f5c7;  /* jade tone */
+    color: #b89c4f;  /* jade tone */
     margin-bottom: 10px;
 }
 
@@ -340,6 +375,13 @@ main {
     max-width: 1100px;
     margin: 0 auto;
     padding: 20px;
+}
+
+.home-title {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 40px;
+    color: #b89c4f;
 }
 
 /* ---------------- GRID LAYOUT ---------------- */
@@ -456,7 +498,7 @@ main {
     font-size: 2.5rem;
     text-align: center;
     margin-bottom: 40px;
-    color: #003d29;
+    color: #b89c4f;
 }
 
 .mycards-grid {
@@ -527,10 +569,10 @@ main {
 }
 
 .transfer-title {
+    font-size: 2.5rem;
     text-align: center;
-    margin-bottom: 30px;
-    font-size: 2rem;
-    color: #003d29;
+    margin-bottom: 40px;
+    color: #b89c4f;
 }
 
 .transfer-grid {
@@ -611,11 +653,10 @@ main {
 
 /* ---------- Attack Title ---------- */
 .attack-title {
+    font-size: 2.5rem;
     text-align: center;
-    font-size: 2.2rem;
-    margin: 20px 0 15px; /* small gap below title */
-    font-weight: 700;
-    color: #003d29;
+    margin-bottom: 40px;
+    color: #b89c4f;;
 }
 
 /* ---------- Attack Grid ---------- */
@@ -723,11 +764,50 @@ color: #333;
 }
 
 .settings-title {
-    text-align: center;
     font-size: 2.2rem;
-    margin: 20px 0 15px; /* small gap below title */
-    font-weight: 700;
-    color: #003d29;
+    margin-bottom: 20px;
+    font-weight: 600;
+    color: #b89c4f; 
+}
+
+.settings-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.settings-card {
+    display: flex;
+    gap: 20px;
+    padding: 18px 22px;
+    border-radius: 12px;
+    background: rgba(255,255,255,0.08);
+    backdrop-filter: blur(6px);
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+.settings-icon svg {
+    fill: none;
+    stroke: currentColor;
+    color: #b89c4f;
+}
+
+.settings-content {
+    flex: 1;
+}
+
+.settings-label {
+    font-size: 1.1rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.settings-desc {
+    color: #888;
+    margin: 4px 0 12px;
+    font-size: 0.9rem;
 }
 
 .settings-list {
@@ -753,6 +833,24 @@ color: #333;
     flex-grow: 1;
 }
 
+.font-btn-group {
+    display: flex;
+    gap: 10px;
+}
+
+.font-btn {
+    padding: 6px 14px;
+    border-radius: 6px;
+    border: none;
+    background: #0e4d37;
+    color: white;
+    cursor: pointer;
+}
+
+.font-btn:hover {
+    opacity: 0.85;
+}
+
 .features-container {
     height: auto;
     display: flex;
@@ -775,8 +873,9 @@ color: #333;
 
 .features-title {
     font-size: 2.5rem;
-    color: #94f5c7;  /* jade tone */
-    margin-bottom: 10px;
+    text-align: center;
+    margin-bottom: 40px;
+    color: #b89c4f;
 }
 
 .features-button {

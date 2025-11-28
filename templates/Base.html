@@ -67,14 +67,14 @@
 
         {% else %}
             <!-- PUBLIC (NOT LOGGED IN) SIDEBAR -->
-            <li><a href="{{ url_for('features') }}">Features</a></li>
+            <li><a href="{{ url_for('features') }}">App Features</a></li>
             <li><a href="https://owasp.org/www-project-top-ten/" target="_blank">OWASP Top Ten</a></li>
             <li><a href="#dev">Secure Development Practices</a></li>
             <li><a href="#contact">Contact Us</a></li>
 
             <!-- About Us and Help exist but scroll anchors (public version) -->
             <li><a href="{{ url_for('aboutus') }}">About Us</a></li>
-            <li><a href="#help">Help</a></li>
+            <li><a href="{{ url_for('help') }}">Help</a></li>
 
             <li><a href="https://github.com/NZShroomy/Vulnerable-Web-app" target="_blank">GitHub Repo</a></li>
         {% endif %}

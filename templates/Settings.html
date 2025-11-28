@@ -3,38 +3,46 @@
 {% block title %}Settings{% endblock %}
 <!-- main content change this per page-->
 {% block content %}
+
 <h1 class="settings-title">Settings</h1>
 
-<div class="settings-list">
+<div class="settings-container">
 
-    <!-- Theme -->
-    <div class="settings-item">
-        <div class="icon">
-            <!-- Sun/Moon icon -->
-            <svg width="30" height="30" viewBox="0 0 24 24">
+    <!-- THEME TOGGLE -->
+    <div class="settings-card">
+        <div class="settings-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24">
                 <circle cx="12" cy="12" r="5"/>
                 <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
             </svg>
         </div>
-        <div class="text">
-            <label>
-                <input type="checkbox" id="darkModeToggle"> Dark Mode
+
+        <div class="settings-content">
+            <label class="settings-label">
+                <input type="checkbox" id="darkModeToggle">
+                <span>Dark Mode</span>
             </label>
+            <p class="settings-desc">Switch between light and dark themes.</p>
         </div>
     </div>
 
-    <!-- Font Size -->
-    <div class="settings-item">
-        <div class="icon">
-            <svg width="30" height="30" viewBox="0 0 24 24">
+    <!-- FONT SIZE -->
+    <div class="settings-card">
+        <div class="settings-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24">
                 <text x="4" y="20" font-size="20">A</text>
             </svg>
         </div>
-        <div class="text">
-            Font Size: 
-            <button class="font-btn" data-size="16">Small</button>
-            <button class="font-btn" data-size="20">Medium</button>
-            <button class="font-btn" data-size="24">Large</button>
+
+        <div class="settings-content">
+            <div class="settings-label">Font Size</div>
+            <p class="settings-desc">Adjust overall interface text size.</p>
+
+            <div class="font-btn-group">
+                <button class="font-btn" data-size="16">Small</button>
+                <button class="font-btn" data-size="20">Medium</button>
+                <button class="font-btn" data-size="24">Large</button>
+            </div>
         </div>
     </div>
 
@@ -46,7 +54,10 @@ document.addEventListener("DOMContentLoaded", () => {
     const fontBtns = document.querySelectorAll(".font-btn");
 
     // Initialize toggle based on saved value
-    if (localStorage.getItem('darkMode') === 'true') darkToggle.checked = true;
+    if (localStorage.getItem('darkMode') === 'true') {
+        darkToggle.checked = true;
+        document.body.classList.add("dark-mode");
+    }
 
     // Dark mode toggle
     darkToggle.addEventListener("change", () => {
@@ -62,6 +73,10 @@ document.addEventListener("DOMContentLoaded", () => {
             localStorage.setItem('fontSize', size);
         });
     });
+
+    // Load saved font size
+    const savedSize = localStorage.getItem('fontSize');
+    if (savedSize) document.body.style.fontSize = savedSize + "px";
 });
 </script>
 
