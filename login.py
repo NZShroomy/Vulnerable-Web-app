@@ -21,8 +21,9 @@ def login():
         conn.close()
 
         if user:
-            session['username'] = username                      # Weak session state
-            session['session_id'] = 12345                 
+            session['username'] = user[1]                      # Weak session state
+            session['session_id'] = 12345 
+            session['role'] = user[3]                
             session['auth_level'] = user[0]               
             flash("Login successful", "success")
             return redirect(url_for('homepage')) 

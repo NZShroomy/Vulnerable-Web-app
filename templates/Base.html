@@ -65,6 +65,10 @@
             <li><a href="{{ url_for('aboutus') }}">About Us</a></li>
             <li><a href="{{ url_for('help') }}">Help</a></li>
 
+            {% if current_role == 'admin' %}
+            <li><a href="{{ url_for('admin_page') }}">Admin Panel</a></li>
+            {% endif %}
+
         {% else %}
             <!-- PUBLIC (NOT LOGGED IN) SIDEBAR -->
             <li><a href="{{ url_for('features') }}">App Features</a></li>

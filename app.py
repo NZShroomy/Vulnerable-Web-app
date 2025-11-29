@@ -18,7 +18,7 @@ reviews_data.append({
     "text": "This is an example review to show how it looks!"
 })
 
-create_tables() # Ensure the database tables are created
+create_tables() # Ensure the database tables are created if they don't exist.
 
 # Register blueprints
 app.register_blueprint(signup_bp)
@@ -29,7 +29,9 @@ app.register_blueprint(transfer_bp)
 # Make session data available in all templates
 @app.context_processor
 def add_user_to_templates():
-    return {'current_user': session.get('username')}
+    return {'current_user': session.get('username'),
+            'current_role': session.get('role')
+            }
 
 @app.route('/')
 def splash():
@@ -110,7 +112,7 @@ def admin_page():
     conn = sqlite3.connect(DB_NAME)
     cursor = conn.cursor()
 
-    cursor.execute("SELECT id, username, password FROM users")
+    cursor.execute("SELECT id, username, password, role FROM users")
     rows = cursor.fetchall()
 
     conn.close()
