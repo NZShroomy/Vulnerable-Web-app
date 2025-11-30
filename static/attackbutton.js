@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", () => {
     auth: {
       title: "Broken User Authentication",
       subtitle: "Flaws in login and session handling",
-      execute: "For this vulnerability, attackers exploit weaknesses in the authentication process.<br> In this application we have no password policies so passwords can be any length and insecure. <br> This allows brute force attacks to be more effective. Nor do we have multi-factor authentication which would add an extra layer of security.<br><br>Example: An attacker could use automated tools to try many password combinations quickly to gain access to user accounts.",
+      execute: "For this vulnerability, attackers exploit weaknesses in the authentication process.<br> In this application we have no password policies so passwords can be any length and insecure. <br> This allows brute force attacks to be more effective. Nor do we have multi-factor authentication which would add an extra layer of security.<br><br>Example: An attacker could use automated tools to try many password combinations quickly to gain access to user accounts. <br>To simulate this In this application there is a account called admin and you can use a brute force tool to try and guess the password or if you are lucky you might guess it yourself!",
       consequences: "The consequences of broken authentication include unauthorized access to user accounts, data breaches, and a potential full system compromise.",
       prevention: "To minimize broken authentication, implement strong session management via cookies, enforcing multi-factor authentication especially for a application dealing with finacials is critical! Requiring users to create strong passwords via strong password policies."
     },
