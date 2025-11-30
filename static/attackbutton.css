@@ -9,6 +9,7 @@
     align-items: center;
     /* main button sits at right, menu expands left */
     flex-direction: row;
+    
 }
 
 .fab-menu {
@@ -46,6 +47,7 @@
     align-items: center;
     justify-content: center;
     box-shadow: 0 6px 18px rgba(0,0,0,0.18);
+    border: #bbbbbb solid 1px;
 }
 
 .fab-main:hover {

@@ -29,7 +29,8 @@ app.register_blueprint(transfer_bp)
 # Make session data available in all templates
 @app.context_processor
 def add_user_to_templates():
-    return {'current_user': session.get('username')}
+    return {'current_user': session.get('username'),
+            'current_user_role': session.get('role')}  # Add user role to template context
 
 @app.route('/')
 def splash():
@@ -110,7 +111,7 @@ def admin_page():
     conn = sqlite3.connect(DB_NAME)
     cursor = conn.cursor()
 
-    cursor.execute("SELECT id, username, password FROM users")
+    cursor.execute("SELECT id, username, password, role FROM users")
     rows = cursor.fetchall()
 
     conn.close()

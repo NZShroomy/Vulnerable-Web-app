@@ -7,7 +7,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login Page</title>
 
-    <link rel="stylesheet" href="{{ url_for('static', filename='global.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='Login.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='attackbutton.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='tutorialbutton.css') }}">
@@ -15,77 +14,73 @@
 </head>
 
 <body>
-
-<div class="login-container">
-    <div class="login-card">
-
-        <h2 class="title">Log in</h2>
-
-        <!-- Flash Messages -->
-        {% with messages = get_flashed_messages(with_categories=true) %}
-            {% if messages %}
-                {% for category, message in messages %}
-                    <div class="flash flash-{{ category }}">
-                        {{ message }}
-                    </div>
-                {% endfor %}
-            {% endif %}
-        {% endwith %}
-
-        <!-- Login Form -->
-        <form class="login-form" action="{{ url_for('login_bp.login') }}" method="POST">
-
-            <div class="form-group">
-                <label for="username">Username</label>
-                <input 
-                    type="text" 
-                    id="username" 
-                    name="username" 
-                    placeholder="Enter your username" 
-                    required
-                >
-            </div>
-
-            <div class="form-group">
-                <label for="password">Password</label>
-                <input 
-                    type="password" 
-                    id="password" 
-                    name="password" 
-                    placeholder="Enter your password"
-                    required
-                >
-            </div>
-
-            <button type="submit">Login</button>
-
-            <div class="form-links">
-                <a href="{{ url_for('signup.signup_page') }}">Create an account</a>
-                <a href="{{ url_for('forgot_bp.forgot_password') }}">Forgot Password?</a>
-            </div>
-
-        </form>
-
+    <div class="logging-grid">
+    
+    <div class="logo-container">
+        <a href="{{ url_for('splash') }}">
+            <img class="logo" src="{{ url_for('static', filename='/images/Logo.png') }}" alt="Logo" />
+        </a>
     </div>
+
+    <div class="login-container">
+        <div class="login-card">
+
+            <h2 class="title">Log in</h2>
+
+            <!-- Flash Messages -->
+            {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+            {% for category, message in messages %}
+            <div class="flash flash-{{ category }}">
+                {{ message }}
+            </div>
+            {% endfor %}
+            {% endif %}
+            {% endwith %}
+
+            <!-- Login Form -->
+            <form class="login-form" action="{{ url_for('login_bp.login') }}" method="POST">
+
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="username" placeholder="Enter your username" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" placeholder="Enter your password" required>
+                </div>
+
+                <button type="submit">Login</button>
+
+                <div class="form-links">
+                    <a href="{{ url_for('signup.signup_page') }}">Create an account</a>
+                    <a href="{{ url_for('forgot_bp.forgot_password') }}">Forgot Password?</a>
+                </div>
+
+            </form>
+
+        </div>
+    </div>
+
+    {% include 'components/attack_buttons.html' %}
+    {% include 'components/attack_overlay.html' %}
+    {% include "components/tutorialbutton.html" %}
+    <script src="{{ url_for('static', filename='attackbutton.js') }}"></script>
+
+    <script src="{{ url_for('static', filename='tutorialbutton.js') }}"></script>
+
+    <script>
+        setTimeout(() => {
+            document.querySelectorAll('.flash').forEach(f => {
+                f.style.transition = "opacity 0.5s";
+                f.style.opacity = "0";
+
+                setTimeout(() => f.remove(), 500);
+            });
+        }, 3000);
+    </script>
 </div>
-
-{% include 'components/attack_buttons.html' %}
-{% include 'components/attack_overlay.html' %}
-{% include "components/tutorialbutton.html" %}
-<script src="{{ url_for('static', filename='attackbutton.js') }}"></script>
- 
-  <script src="{{ url_for('static', filename='tutorialbutton.js') }}"></script>
-
-<script>
-     setTimeout(() => {
-        document.querySelectorAll('.flash').forEach(f => {
-            f.style.transition = "opacity 0.5s";
-            f.style.opacity = "0";
-
-            setTimeout(() => f.remove(), 500); 
-        });
-    }, 3000);
-</script>
-
 </body>
+
 </html>
