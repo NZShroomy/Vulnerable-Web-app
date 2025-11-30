@@ -10,7 +10,7 @@ This application should be used ethically only.
 3. Create a virtual environment:
    python -m venv venv
 4. Activate it:
-   # PowerShell
+   PowerShell
    .\venv\Scripts\Activate.ps1
 5. Install dependencies:
    pip install -r requirements.txt
