@@ -20,70 +20,141 @@
         <div class="tutorial-page" id="tutPage2">
             <h2>Navigation</h2>
             <p>Use the sidebar to move through major sections of the app.</p>
+            <img src="{{ url_for('static', filename='images/sidebar.png') }}" 
+                 alt="Tut image" class="tutorial-image">
+                 <p>To return to Homepage, Click the Logo, <u>Critical Job Bank</u> in the top left corner of the page. </p>
         </div>
 
         <div class="tutorial-page" id="tutPage3">
             <h2>Hack Button</h2>
             <p>Try Pressing the '≡' button, one of five hacks will be available depending on the page. This will show you the process of how the hack is carried out, what the victim suffers, and how to prevent or protect against this type of hack in the future.</p>
+            <img src="{{ url_for('static', filename='images/attackbutton.png') }}" 
+                 alt="Tut image" class="tutorial-image">
         </div>
 
         <div class="tutorial-page" id="tutPageSQL">
             <h2>SQL Injection</h2>
-            <p>A1: OWASP Top 10 2021<br>
-                A widespread internet epidemic, still a very commonly<br>
-                used vulnerability in the cybersphere
-                <br><br>
+            <h4>A widespread internet epidemic, still a very commonly<br>
+                used vulnerability in the cybersphere</h4>
+            <p>OWASP Top 10 2021 - #1<br>
+                <br>
                 Root Cause: Weak input validation - <br>
                 The attacker "injects" malicious code into the page <br>
                 and if the page code is not correctly sanitised, <br>
                 the attacker may gain access, change, or delete data
                 <br><br>
-                
+                Victim Impact: <br>
+                Loss, corruption, or theft of database records<br>
+                Complete compromise of the application or server<br>
+                Financial loss, privacy breaches, legal consequences<br><br>
+                Hacker Gains: <br>
+                Ability to read, change, or delete data<br>
+                Bypass authentication or escalate privileges<br>
+                Potential full control over the database or host machine<br>
             </p>
         </div>
         
         <div class="tutorial-page" id="tutPageAuth">
             <h2>Broken User Authentication</h2>
-            <p>A2: OWASP Top 10 2021<br>
-                Still extremely common, ultimately because<br>
-                of it's many ways to be excecuted.
-                <br><br>
+            <h4>Still extremely common, ultimately because<br>
+                of it's many ways to be excecuted.</h4>
+            <p>OWASP Top 10 2021 - #2<br>
+                <br>
                 Root Cause: Weak or default passwords, <br>
-                no 2FA/MFA authentication, no/bad session handling <br>
+                no 2FA/MFA authentication, no/bad session handling
                 <br><br>
-
+                Victim Impact: <br>
+                Users’ accounts can be taken over<br>
+                Unauthorized transactions or data changes<br>
+                Loss of trust and possible identity theft<br><br>
+                Hacker Gains: <br>
+                Access to victim accounts as if they were the user<br>
+                Ability to perform actions on behalf of the victim<br>
+                Access to sensitive personal or financial information<br>
             </p>
         </div>
         
         <div class="tutorial-page" id="tutPageXSS">
             <h2>Cross Side Scripting</h2>
-            <p>A7: OWASP Top 10 2021<br>
-                Malicious JavaScript is run within<br>
-                an active users browser<br>
-                <br><br>
+            <h4>Malicious JavaScript is run within<br>
+                an active users browser<br></h4>
+            <p>OWASP Top 10 2021 - #7<br>
+                <br>
                 Root Cause:  lack of code validation/sanitisation<br>
                 The attacker "injects" malicious script into the page. <br>
                 usually within the regular content such as a commment section, <br>
                 and without anything to warn the system the code isn't part of<br>
                 the original code, the script is excecuted.
-                <br><br></p>
+                <br><br>
+                Victim Impact: <br>
+                Theft of cookies/session tokens<br>
+                Forced actions taken on their behalf (e.g., transferring funds)<br>
+                Malware or phishing attacks delivered through trusted sites<br><br>
+                Hacker Gains: <br>
+                Ability to hijack sessions and impersonate users<br>
+                Ability to run arbitrary JavaScript in the victim’s browser<br>
+                A platform to launch further attacks (phishing, redirects, keylogging)<br>
+            </p>
         </div>
         
         <div class="tutorial-page" id="tutPageAC">
             <h2>Broken Access Control</h2>
-            <p>A5: OWASP Top 10 2021<br>
-                The #1 most critical vulnerability of 2021<br>
-                BAC is the 
+            <h4>The #1 most critical vulnerability of 2021<br>
+                BAC is the most common vulnerability, due to<br>
+                the existance of many ways to penetrate a browser<br>
+                to gain access.</h4>
+            <p>OWASP Top 10 2021 - #5<br>
+                <br>
+                Root Cause: No authorisation or authentication serverside
                 <br><br>
+                Victim Impact: <br>
+                Unauthorized users can view or modify private data<br>
+                Business logic manipulation (e.g., price tampering, permission abuse)<br>
+                Data leaks or full account compromise<br><br>
+                Hacker Gains: <br>
+                Unauthorized access to restricted areas, files, or functions<br>
+                Ability to escalate to admin-level privileges<br>
+                Ability to modify or delete critical resources<br>
                 </p>
         </div>
         
         <div class="tutorial-page" id="tutPageSDE">
             <h2>Sensitive Data Exposure</h2>
-            <p>A3: OWASP Top 10 2021<br>
-                A widespread internet epidemic, still a very commonly<br>
-                used vulnerability in the cybersphere
+            <h4>As the name states, data is leaked<br>
+                usually due to another vulnerability excecution<br></h4>
+            <p>OWASP Top 10 2021 - #3<br>
+                <br>
+                Root Cause: No heirarchy of protection, lack of encryption <br>
+                insecure transport of data, or unsafe data storage
                 <br><br>
+                Victim Impact: <br>
+                Theft of personal, financial, or authentication data<br>
+                Fraud, identity theft, or long-term privacy damage<br>
+                Regulatory fines and reputational damage for organisations<br><br>
+                Hacker Gains: <br>
+                Access to plaintext sensitive information<br>
+                Ability to exploit stolen credentials across other services<br>
+                Power to resell or use stolen data for further attacks<br>
+                </p>
+        </div>
+
+        <div class="tutorial-page" id="Legality">
+            <h2>Hack Legality</h2>
+            <p>Do the crime, do the time!<br>
+                Most countries treat cyber crime<br>
+                as strongly as other criminal offences<br>
+                majority having legislation specific to cyber crime, convicting for<br>
+                any and all intentional harm to a digital infrastructure.
+                <br><br>
+                There are even agreements formed internationally,<br>
+                such as the <bold>Budapest Convention on Cybercrime</bold><br>
+                with standardisation and the legitimisation of cybercrime<br>
+                in the recent years.
+                <br><br>
+                If you're reading this, and you've thought about using your<br>
+                skills for nefarious gain, please let this be a warning.<br>
+                <br><br>
+                <h4>Remember, Cybercrime Isn’t Clever — It’s Criminal.</h4>
                 </p>
         </div>
 

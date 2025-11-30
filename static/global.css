@@ -268,6 +268,7 @@ main {
 .account-card:hover {
     transform: translateY(-4px);
     background-color: #004632;
+    box-shadow: 2px 0 15px rgba(148, 245, 199, 0.25);
 }
 
 .account-image {
@@ -519,11 +520,12 @@ main {
     }
 }
 
-/* Container */
 .mycards-container {
     max-width: 1100px;
     margin: 0 auto;
     padding: 20px;
+    transform: scale(0.85);
+    transform-origin: top center; /* keeps it centered */
 }
 
 .mycards-container .info-card:hover {
@@ -531,6 +533,7 @@ main {
     box-shadow: 0 10px 25px rgba(0,0,0,0.22);
     background-color: #004632; /* subtle highlight */
     transition: all 0.3s ease;
+    box-shadow: 2px 0 15px rgba(148, 245, 199, 0.25);
 }
 
 .mycards-container .info-card-link:hover {
@@ -565,8 +568,8 @@ main {
     width: 45%;
     max-height: 300px;
     object-fit: cover;
-    border-radius: 15px;
-    border: 2px solid rgba(0,61,41,0.25);
+    border-radius: 25px;
+    border: 4px solid rgba(0,61,41,0.25);
     box-shadow: 0 4px 10px rgba(0,0,0,0.15);
 }
 

@@ -51,6 +51,7 @@
     box-shadow: 0 4px 25px rgba(0, 0, 0, 0.4);
     position: relative;
     animation: fadeIn 0.3s ease;
+    border: 3px solid #94f5c7;
 }
 
 /* Close button */
@@ -71,6 +72,15 @@
 
 .tutorial-page.active {
     display: block;
+}
+
+.tutorial-image{
+    display: block;
+    margin: 20px auto;   /* auto = centers left/right */
+    max-width: 600px;
+    max-width: 100%;     /* prevents overflow */
+    height: auto;        /* keeps aspect ratio */
+    box-shadow: 0 2px 12px rgba(0, 100, 60, 0.6);
 }
 
 /* Navigation */
@@ -100,4 +110,24 @@
 
 .tutorial-btn.accept {
     background: #0d7554;
+}
+
+.tutorial-page h2 {
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+    font-size: 1.5rem;
+    color: #94f5c7;
+}
+
+.tutorial-page h4{
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+    color: #94f5c7;
+}
+
+.tutorial-page p {
+    color: #ffffff;
+    line-height: 1.4;
+    margin-bottom: 1rem;
 }
