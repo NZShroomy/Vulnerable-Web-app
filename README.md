@@ -51,9 +51,9 @@ This attack requires you to be signed out of all accounts (click your username a
 This vulnability is the most simple but for a more reaslitic scenario combine this with the Broken access control. First create a new account for yourself. Then navigate to the /admin page (BAC) then notice how this admin page you can see all passswords in plain text!
 
 # navigation tips
-# The Attack button
+The Attack button
 <img width="113" height="87" alt="image" src="https://github.com/user-attachments/assets/bd35362e-03e4-4fe0-9ff9-251f0a59e6fe" /> 
-# the tutorial button 
+the tutorial button 
 <img width="89" height="80" alt="image" src="https://github.com/user-attachments/assets/43cae0e8-792e-4a9c-b5f5-94199727a3c4" />
 
 
