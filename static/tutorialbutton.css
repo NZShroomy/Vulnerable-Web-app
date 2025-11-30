@@ -20,6 +20,7 @@
     justify-content: center;
     align-items: center;
     line-height: 0;
+    border: #bbbbbb solid 1px;
 }
 
 .fab-toggle:hover {

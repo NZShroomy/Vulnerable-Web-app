@@ -14,35 +14,44 @@
 </head>
 
 <body>
-        <div class="login-container">
-                <div class="login-card">
-                        <h2 class="title">Sign up</h2>
-
-                        <form class="login-form" action="{{ url_for('signup.signup_page') }}" method="POST" name="signup">
-                                <div class="form-group">
-                                        <label for="username">Username</label>
-                                        <input type="text" id="username" name="username" required
-                                                autocomplete="username">
-                                </div>
-                                <div class="form-group">
-                                        <label for="password">Password</label>
-                                        <input type="password" id="password" name="password" required
-                                                autocomplete="current-password">
-                                </div>
-                                <div class="form-group">
-                                        <button type="submit">Create Account</button>
-                                </div>
-                                <p class="help">Already have an account? <a href="{{ url_for('login_bp.login') }}">Login</a></p>
-                        </form>
+        <div class="logging-grid">
+                <div class="logo-container">
+                        <a href="{{ url_for('splash') }}">
+                                <img class="logo" src="{{ url_for('static', filename='/images/Logo.png') }}"
+                                        alt="Logo" />
+                        </a>
                 </div>
+                <div class="login-container">
+                        <div class="login-card">
+                                <h2 class="title">Sign up</h2>
+
+                                <form class="login-form" action="{{ url_for('signup.signup_page') }}" method="POST"
+                                        name="signup">
+                                        <div class="form-group">
+                                                <label for="username">Username</label>
+                                                <input type="text" id="username" name="username" required
+                                                        autocomplete="username">
+                                        </div>
+                                        <div class="form-group">
+                                                <label for="password">Password</label>
+                                                <input type="password" id="password" name="password" required
+                                                        autocomplete="current-password">
+                                        </div>
+                                        <div class="form-group">
+                                                <button type="submit">Create Account</button>
+                                        </div>
+                                        <p class="help">Already have an account? <a
+                                                        href="{{ url_for('login_bp.login') }}">Login</a></p>
+                                </form>
+                        </div>
+                </div>
+
+                {% include 'components/attack_buttons.html' %}
+                {% include 'components/attack_overlay.html' %}
+                <script src="{{ url_for('static', filename='attackbutton.js') }}"></script>
+                {% include "components/tutorialbutton.html" %}
+                <script src="{{ url_for('static', filename='tutorialbutton.js') }}"></script>
         </div>
-
-        {% include 'components/attack_buttons.html' %}
-        {% include 'components/attack_overlay.html' %}
-        <script src="{{ url_for('static', filename='attackbutton.js') }}"></script>
-         {% include "components/tutorialbutton.html" %}
-         <script src="{{ url_for('static', filename='tutorialbutton.js') }}"></script>
-
 </body>
 
 </html>

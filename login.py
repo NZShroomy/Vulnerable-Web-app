@@ -22,7 +22,7 @@ def login():
 
         if user:
             session['username'] = username                      # Weak session state
-            session['session_id'] = 12345                 
+            session['role'] = user[3]                             # Store user role in session                
             session['auth_level'] = user[0]               
             flash("Login successful", "success")
             return redirect(url_for('homepage')) 

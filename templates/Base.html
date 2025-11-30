@@ -31,19 +31,20 @@
       </div>
       
       <div class="header-account">
+    {% if current_user %}
         <div class="header-account-link">
-          {% if current_user %}
-          Kia Ora, {{ current_user }}
+            Kia Ora, {{ current_user }}
         </div>
-        
         <div class="header-dropdown">
-          <a href="{{ url_for('settings') }}">⚙ Settings</a>
-          <a href="{{ url_for('login_bp.logout') }}">꩜ Logout</a>
+            <a href="{{ url_for('settings') }}">⚙ Settings</a>
+            <a href="{{ url_for('login_bp.logout') }}">꩜ Logout</a>
         </div>
-        {% else %}
-          <a href="{{ url_for('login_bp.login') }}">꩜ Login</a>
-        {% endif %}
-      </div>
+    {% else %}
+        <div class="header-account-link">
+            <a href="{{ url_for('login_bp.login') }}">꩜ Login</a>
+        </div>
+    {% endif %}
+</div>
       {% endblock %}
     </header>
 
@@ -64,7 +65,10 @@
             <li><a href="#Tutorials" id="sidebarTutorials">Tutorials</a></li>
             <li><a href="{{ url_for('aboutus') }}">About Us</a></li>
             <li><a href="{{ url_for('help') }}">Help</a></li>
-
+            <!-- admin sidebar additions-->
+            {% if current_user_role == 'admin' %}
+            <li><a href="{{ url_for('admin_page') }}">Admin Dashboard</a></li>
+            {% endif %}
         {% else %}
             <!-- PUBLIC (NOT LOGGED IN) SIDEBAR -->
             <li><a href="{{ url_for('features') }}">App Features</a></li>
